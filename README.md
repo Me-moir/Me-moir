@@ -38,20 +38,6 @@
 <img width="900" src="https://github-readme-activity-graph.vercel.app/graph?username=Me-moir&bg_color=040c0e&color=00d9c8&line=00d9c8&point=00d9c8&area=true&hide_border=true&area_color=00d9c8"/>
 </div>
 
-<br/>
-
-<div align="center">
-
-[![Notus Regalia](https://github-readme-stats.vercel.app/api/pin/?username=Me-moir&repo=Notus-Regalia&theme=dark&hide_border=true&bg_color=040c0e&title_color=00d9c8&icon_color=00d9c8&text_color=3a7a78&cache_seconds=1800)](https://github.com/Me-moir/Notus-Regalia)
-&nbsp;
-[![Project Claire AI](https://github-readme-stats.vercel.app/api/pin/?username=Me-moir&repo=Project-Claire.ai&theme=dark&hide_border=true&bg_color=040c0e&title_color=00d9c8&icon_color=ffab00&text_color=3a7a78&cache_seconds=1800)](https://github.com/Me-moir/Project-Claire.ai)
-&nbsp;
-[![Kizuna Tree](https://github-readme-stats.vercel.app/api/pin/?username=Me-moir&repo=Kizuna-Tree&theme=dark&hide_border=true&bg_color=040c0e&title_color=00d9c8&icon_color=00d9c8&text_color=3a7a78&cache_seconds=1800)](https://github.com/Me-moir/Kizuna-Tree)
-&nbsp;
-[![Yushiro Commissions](https://github-readme-stats.vercel.app/api/pin/?username=Me-moir&repo=Yushiro-Commissions-React&theme=dark&hide_border=true&bg_color=040c0e&title_color=00d9c8&icon_color=00d9c8&text_color=3a7a78&cache_seconds=1800)](https://github.com/Me-moir/Yushiro-Commissions-React)
-
-</div>
-
 <div align="center">
 <img src="footer.svg" width="900" alt=""/>
 </div>
