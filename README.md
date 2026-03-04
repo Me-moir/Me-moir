@@ -9,7 +9,7 @@
 
 ```
 ╔─────────────────────────────────────────────────────────────────╗
-│  ██╗███████╗██╗  ██╗██╗  ██╗  ·  OPERATOR PROFILE              │
+│  OPERATOR PROFILE  ·  JANSSEN JEKK  ·  @Me-moir              │
 │  ██║██╔════╝██║ ██╔╝██║ ██╔╝  ·  ID     : ME-MOIR              │
 │  ██║█████╗  █████╔╝ █████╔╝   ·  CLASS  : FULL-STACK + AI/ML   │
 │  ██║██╔══╝  ██╔═██╗ ██╔═██╗   ·  STATUS : ██████░░░░ ONLINE    │
@@ -42,24 +42,25 @@
 
 ```python
 # ─────────────────────────────────────────────────────
-#  /home/jekk/profile.py  ·  CLEARANCE: PUBLIC
+#  /home/janssen/profile.py  ·  CLEARANCE: PUBLIC
 # ─────────────────────────────────────────────────────
 
 class Operator:
     handle      = "Me-moir"
-    name        = "Jekk"
+    name        = "Janssen Jekk"
     clearance   = "Public"
 
     specialties = [
-        "Full-Stack Engineering",   # React · Node · TypeScript
-        "AI & Machine Learning",    # PyTorch · TensorFlow · LLMs
-        "Data Engineering",         # Pipelines · Analytics · APIs
+        "Full-Stack Engineering",   # Next.js · React · TypeScript · Node
+        "3D / WebGL / Shaders",     # Three.js · R3F · GLSL · Drei
+        "Cloud & DevOps",           # AWS · GCP · Docker · Kubernetes
+        "Data & APIs",              # GraphQL · tRPC · REST · Prisma
     ]
 
-    current_op  = "Building things that matter"
-    side_quest  = "Startup landing pages & AI projects"
+    current_op  = "Building intelligent systems at scale"
+    cloud       = ["Vercel", "AWS", "GCP", "Azure"]
     comms       = "Open to collaboration — slide into issues"
-    status      = "lowkey  | Pro"
+    status      = "lowkey | Pro"
 
     def motto(self):
         return "Ship in silence. Let the commits speak."
@@ -78,33 +79,92 @@ class Operator:
 
 <div align="center">
 
-**`[ LANGUAGES ]`**
+**`[ CORE FRAMEWORK ]`**
 
-![Python](https://img.shields.io/badge/PYTHON-080f10?style=for-the-badge&logo=python&logoColor=00d9c8&labelColor=080f10)
-![TypeScript](https://img.shields.io/badge/TYPESCRIPT-080f10?style=for-the-badge&logo=typescript&logoColor=00d9c8&labelColor=080f10)
-![JavaScript](https://img.shields.io/badge/JAVASCRIPT-080f10?style=for-the-badge&logo=javascript&logoColor=00d9c8&labelColor=080f10)
-![HTML5](https://img.shields.io/badge/HTML5-080f10?style=for-the-badge&logo=html5&logoColor=00d9c8&labelColor=080f10)
-
-**`[ FRAMEWORKS & RUNTIME ]`**
-
-![React](https://img.shields.io/badge/REACT-080f10?style=for-the-badge&logo=react&logoColor=00d9c8&labelColor=080f10)
-![Node.js](https://img.shields.io/badge/NODE.JS-080f10?style=for-the-badge&logo=node.js&logoColor=00d9c8&labelColor=080f10)
-![FastAPI](https://img.shields.io/badge/FASTAPI-080f10?style=for-the-badge&logo=fastapi&logoColor=00d9c8&labelColor=080f10)
 ![Next.js](https://img.shields.io/badge/NEXT.JS-080f10?style=for-the-badge&logo=next.js&logoColor=00d9c8&labelColor=080f10)
+![React](https://img.shields.io/badge/REACT-080f10?style=for-the-badge&logo=react&logoColor=00d9c8&labelColor=080f10)
+![TypeScript](https://img.shields.io/badge/TYPESCRIPT-080f10?style=for-the-badge&logo=typescript&logoColor=00d9c8&labelColor=080f10)
 
-**`[ AI / ML ARSENAL ]`**
+**`[ STYLING / UI ]`**
 
-![PyTorch](https://img.shields.io/badge/PYTORCH-080f10?style=for-the-badge&logo=pytorch&logoColor=ffab00&labelColor=080f10)
-![TensorFlow](https://img.shields.io/badge/TENSORFLOW-080f10?style=for-the-badge&logo=tensorflow&logoColor=ffab00&labelColor=080f10)
-![scikit-learn](https://img.shields.io/badge/SCIKIT--LEARN-080f10?style=for-the-badge&logo=scikit-learn&logoColor=ffab00&labelColor=080f10)
-![Pandas](https://img.shields.io/badge/PANDAS-080f10?style=for-the-badge&logo=pandas&logoColor=ffab00&labelColor=080f10)
+![Tailwind CSS](https://img.shields.io/badge/TAILWIND_CSS-080f10?style=for-the-badge&logo=tailwindcss&logoColor=00d9c8&labelColor=080f10)
+![shadcn/ui](https://img.shields.io/badge/SHADCN%2FUI-080f10?style=for-the-badge&logo=shadcnui&logoColor=00d9c8&labelColor=080f10)
+![Radix UI](https://img.shields.io/badge/RADIX_UI-080f10?style=for-the-badge&logo=radixui&logoColor=00d9c8&labelColor=080f10)
+![Framer Motion](https://img.shields.io/badge/FRAMER_MOTION-080f10?style=for-the-badge&logo=framer&logoColor=00d9c8&labelColor=080f10)
+![Lucide](https://img.shields.io/badge/LUCIDE_ICONS-080f10?style=for-the-badge&logo=lucide&logoColor=00d9c8&labelColor=080f10)
 
-**`[ INFRASTRUCTURE ]`**
+**`[ 3D / VISUALIZATION ]`**
 
-![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-080f10?style=for-the-badge&logo=postgresql&logoColor=00d9c8&labelColor=080f10)
+![Three.js](https://img.shields.io/badge/THREE.JS-080f10?style=for-the-badge&logo=threedotjs&logoColor=00b5a5&labelColor=080f10)
+![React Three Fiber](https://img.shields.io/badge/REACT_THREE_FIBER-080f10?style=for-the-badge&logo=threedotjs&logoColor=00b5a5&labelColor=080f10)
+![Drei](https://img.shields.io/badge/DREI-080f10?style=for-the-badge&logo=threedotjs&logoColor=00b5a5&labelColor=080f10)
+![WebGL](https://img.shields.io/badge/WEBGL-080f10?style=for-the-badge&logo=webgl&logoColor=00b5a5&labelColor=080f10)
+![GLSL](https://img.shields.io/badge/GLSL-080f10?style=for-the-badge&logo=opengl&logoColor=00b5a5&labelColor=080f10)
+
+**`[ STATE MANAGEMENT ]`**
+
+![Zustand](https://img.shields.io/badge/ZUSTAND-080f10?style=for-the-badge&logo=zustand&logoColor=00d9c8&labelColor=080f10)
+![Redux Toolkit](https://img.shields.io/badge/REDUX_TOOLKIT-080f10?style=for-the-badge&logo=redux&logoColor=00d9c8&labelColor=080f10)
+
+**`[ BACKEND ]`**
+
+![Node.js](https://img.shields.io/badge/NODE.JS-080f10?style=for-the-badge&logo=node.js&logoColor=00d9c8&labelColor=080f10)
+![Express](https://img.shields.io/badge/EXPRESS-080f10?style=for-the-badge&logo=express&logoColor=00d9c8&labelColor=080f10)
+![NestJS](https://img.shields.io/badge/NESTJS-080f10?style=for-the-badge&logo=nestjs&logoColor=00d9c8&labelColor=080f10)
+![Socket.io](https://img.shields.io/badge/SOCKET.IO-080f10?style=for-the-badge&logo=socketdotio&logoColor=00d9c8&labelColor=080f10)
+![NextAuth.js](https://img.shields.io/badge/NEXTAUTH.JS-080f10?style=for-the-badge&logo=nextdotjs&logoColor=00d9c8&labelColor=080f10)
+![Clerk](https://img.shields.io/badge/CLERK-080f10?style=for-the-badge&logo=clerk&logoColor=00d9c8&labelColor=080f10)
+![JWT](https://img.shields.io/badge/JWT-080f10?style=for-the-badge&logo=jsonwebtokens&logoColor=00d9c8&labelColor=080f10)
+
+**`[ DATABASE ]`**
+
+![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-080f10?style=for-the-badge&logo=postgresql&logoColor=00b5a5&labelColor=080f10)
+![MySQL](https://img.shields.io/badge/MYSQL-080f10?style=for-the-badge&logo=mysql&logoColor=00b5a5&labelColor=080f10)
+![MongoDB](https://img.shields.io/badge/MONGODB-080f10?style=for-the-badge&logo=mongodb&logoColor=00b5a5&labelColor=080f10)
+![Firebase](https://img.shields.io/badge/FIREBASE-080f10?style=for-the-badge&logo=firebase&logoColor=00b5a5&labelColor=080f10)
+![Prisma](https://img.shields.io/badge/PRISMA-080f10?style=for-the-badge&logo=prisma&logoColor=00b5a5&labelColor=080f10)
+![Drizzle](https://img.shields.io/badge/DRIZZLE_ORM-080f10?style=for-the-badge&logo=drizzle&logoColor=00b5a5&labelColor=080f10)
+
+**`[ CLOUD / DEPLOYMENT ]`**
+
+![Vercel](https://img.shields.io/badge/VERCEL-080f10?style=for-the-badge&logo=vercel&logoColor=00d9c8&labelColor=080f10)
+![AWS](https://img.shields.io/badge/AWS-080f10?style=for-the-badge&logo=amazonwebservices&logoColor=00d9c8&labelColor=080f10)
+![GCP](https://img.shields.io/badge/GOOGLE_CLOUD-080f10?style=for-the-badge&logo=googlecloud&logoColor=00d9c8&labelColor=080f10)
+![Azure](https://img.shields.io/badge/AZURE-080f10?style=for-the-badge&logo=microsoftazure&logoColor=00d9c8&labelColor=080f10)
 ![Docker](https://img.shields.io/badge/DOCKER-080f10?style=for-the-badge&logo=docker&logoColor=00d9c8&labelColor=080f10)
+![Kubernetes](https://img.shields.io/badge/KUBERNETES-080f10?style=for-the-badge&logo=kubernetes&logoColor=00d9c8&labelColor=080f10)
+![Cloudflare](https://img.shields.io/badge/CLOUDFLARE-080f10?style=for-the-badge&logo=cloudflare&logoColor=00d9c8&labelColor=080f10)
+
+**`[ DATA / APIs ]`**
+
+![REST API](https://img.shields.io/badge/REST_API-080f10?style=for-the-badge&logo=fastapi&logoColor=00b5a5&labelColor=080f10)
+![GraphQL](https://img.shields.io/badge/GRAPHQL-080f10?style=for-the-badge&logo=graphql&logoColor=00b5a5&labelColor=080f10)
+![tRPC](https://img.shields.io/badge/TRPC-080f10?style=for-the-badge&logo=trpc&logoColor=00b5a5&labelColor=080f10)
+![Swagger](https://img.shields.io/badge/OPENAPI%2FSWAGGER-080f10?style=for-the-badge&logo=swagger&logoColor=00b5a5&labelColor=080f10)
+
+**`[ MONITORING / ANALYTICS ]`**
+
+![Sentry](https://img.shields.io/badge/SENTRY-080f10?style=for-the-badge&logo=sentry&logoColor=00d9c8&labelColor=080f10)
+![Datadog](https://img.shields.io/badge/DATADOG-080f10?style=for-the-badge&logo=datadog&logoColor=00d9c8&labelColor=080f10)
+![Prometheus](https://img.shields.io/badge/PROMETHEUS-080f10?style=for-the-badge&logo=prometheus&logoColor=00d9c8&labelColor=080f10)
+![Grafana](https://img.shields.io/badge/GRAFANA-080f10?style=for-the-badge&logo=grafana&logoColor=00d9c8&labelColor=080f10)
+
+**`[ TESTING ]`**
+
+![Jest](https://img.shields.io/badge/JEST-080f10?style=for-the-badge&logo=jest&logoColor=00b5a5&labelColor=080f10)
+![Vitest](https://img.shields.io/badge/VITEST-080f10?style=for-the-badge&logo=vitest&logoColor=00b5a5&labelColor=080f10)
+![Testing Library](https://img.shields.io/badge/TESTING_LIBRARY-080f10?style=for-the-badge&logo=testinglibrary&logoColor=00b5a5&labelColor=080f10)
+![Cypress](https://img.shields.io/badge/CYPRESS-080f10?style=for-the-badge&logo=cypress&logoColor=00b5a5&labelColor=080f10)
+![Playwright](https://img.shields.io/badge/PLAYWRIGHT-080f10?style=for-the-badge&logo=playwright&logoColor=00b5a5&labelColor=080f10)
+
+**`[ DEV TOOLS ]`**
+
 ![Git](https://img.shields.io/badge/GIT-080f10?style=for-the-badge&logo=git&logoColor=00d9c8&labelColor=080f10)
-![Linux](https://img.shields.io/badge/LINUX-080f10?style=for-the-badge&logo=linux&logoColor=00d9c8&labelColor=080f10)
+![GitHub](https://img.shields.io/badge/GITHUB-080f10?style=for-the-badge&logo=github&logoColor=00d9c8&labelColor=080f10)
+![ESLint](https://img.shields.io/badge/ESLINT-080f10?style=for-the-badge&logo=eslint&logoColor=00d9c8&labelColor=080f10)
+![Prettier](https://img.shields.io/badge/PRETTIER-080f10?style=for-the-badge&logo=prettier&logoColor=00d9c8&labelColor=080f10)
+![Turborepo](https://img.shields.io/badge/TURBOREPO-080f10?style=for-the-badge&logo=turborepo&logoColor=00d9c8&labelColor=080f10)
+![pnpm](https://img.shields.io/badge/PNPM-080f10?style=for-the-badge&logo=pnpm&logoColor=00d9c8&labelColor=080f10)
 
 </div>
 
