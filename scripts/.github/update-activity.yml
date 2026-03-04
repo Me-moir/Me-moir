@@ -1,0 +1,42 @@
+name: Update Activity SVG
+
+on:
+  # Run every 30 minutes
+  schedule:
+    - cron: "*/30 * * * *"
+  # Also run on every push to main
+  push:
+    branches: [main]
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    name: Regenerate activity.svg
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate activity.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_activity.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add activity.svg
+          # Only commit if the file actually changed
+          git diff --cached --quiet || git commit -m "chore: update activity.svg [skip ci]"
+          git push
