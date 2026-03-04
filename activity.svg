@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="346" viewBox="0 0 900 346">
+  <defs>
+    <filter id="liq" x="-2%" y="-2%" width="104%" height="104%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="b"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.6 0.3" numOctaves="2" seed="9" result="n"/>
+      <feDisplacementMap in="b" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feComposite in="d" in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="346" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#040c0e"/><stop offset="100%" stop-color="#020809"/>
+    </linearGradient>
+    <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.055"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.018"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shimAnim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="46%"  stop-color="transparent"/>
+      <stop offset="50%"  stop-color="rgba(200,255,252,0.04)"/>
+      <stop offset="54%"  stop-color="transparent"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="346" fill="url(#bgG)"/>
+  <rect width="900" height="346" fill="url(#grid)"/>
+  <rect width="900" height="346" fill="url(#glassL)" filter="url(#liq)"/>
+  <rect x="0" y="0" width="900" height="1" fill="url(#shine)" opacity="0.5"/>
+  <rect x="-900" y="0" width="900" height="346" fill="url(#shimAnim)">
+    <animateTransform attributeName="transform" type="translate" from="-900 0" to="1800 0" dur="9s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0.5" y="0.5" width="899" height="345" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
+  <polyline points="0,14 0,0 14,0"                                             fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="886,0 900,0 900,14"                                   fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="0,332 0,346 14,346"                      fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="886,346 900,346 900,332"            fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <text x="36" y="28" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="3">ACTIVITY</text>
+  <circle cx="840" cy="22" r="3" fill="#00d9c8">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="850" y="26" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="1">LIVE</text>
+  <rect x="36" y="36" width="828" height="1" fill="#00d9c8" opacity="0.07"/>
+
+  
+  <rect x="0" y="50" width="900" height="52" fill="#00d9c8" opacity="0.03"/>
+  <rect x="36" y="101" width="828" height="1" fill="#00d9c8" opacity="0.04"/>
+  <text x="36"  y="70" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="1">Notus-Regalia</text>
+  <text x="36"  y="88" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">pushed — setup project scaffold</text>
+  <text x="864" y="80" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">2d ago</text>
+  <rect x="0" y="102" width="900" height="52" fill="#00d9c8" opacity="0"/>
+  <rect x="36" y="153" width="828" height="1" fill="#00d9c8" opacity="0.04"/>
+  <text x="36"  y="122" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="1">Project-Claire.ai</text>
+  <text x="36"  y="140" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">created branch main</text>
+  <text x="864" y="132" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">3d ago</text>
+  <rect x="0" y="154" width="900" height="52" fill="#00d9c8" opacity="0.03"/>
+  <rect x="36" y="205" width="828" height="1" fill="#00d9c8" opacity="0.04"/>
+  <text x="36"  y="174" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="1">Kizuna-Tree</text>
+  <text x="36"  y="192" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">pushed — update link structure</text>
+  <text x="864" y="184" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">4d ago</text>
+  <rect x="0" y="206" width="900" height="52" fill="#00d9c8" opacity="0"/>
+  <rect x="36" y="257" width="828" height="1" fill="#00d9c8" opacity="0.04"/>
+  <text x="36"  y="226" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="1">Yushiro-Commissions-React</text>
+  <text x="36"  y="244" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">pushed — component refactor</text>
+  <text x="864" y="236" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">5d ago</text>
+  <rect x="0" y="258" width="900" height="52" fill="#00d9c8" opacity="0.03"/>
+  <rect x="36" y="309" width="828" height="1" fill="#00d9c8" opacity="0.04"/>
+  <text x="36"  y="278" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="1">Me-moir</text>
+  <text x="36"  y="296" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">created profile README</text>
+  <text x="864" y="288" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">6d ago</text>
+
+  <rect x="36" y="310" width="828" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="36" y="332" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828">SYNCED  2026-03-04 17:02 UTC  ·  AUTO-UPDATES EVERY 30 MIN</text>
+</svg>

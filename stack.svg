@@ -1,354 +1,130 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
   <defs>
-    <style>
-      .bg { fill: #080f10; }
-      .panel-bg { fill: #080f10; stroke: #0d2f2f; stroke-width: 1; }
-      .hdr { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #2a5a5a; letter-spacing: 3px; }
-      .tag-box { fill: none; stroke: #0d2f2f; stroke-width: 1; }
-      .tag { font-family: 'Share Tech Mono', monospace; font-size: 9px; fill: #0d2f2f; }
-      .cat { font-family: 'Share Tech Mono', monospace; font-size: 9px; fill: #2a5a5a; letter-spacing: 2px; }
-      .tech { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #a8cece; }
-      .tech-box { fill: rgba(0,217,200,0.03); stroke: #0d2f2f; stroke-width: 1; }
-      .dot-t { fill: #00d9c8; }
-      .dot-a { fill: #ffab00; }
-      .dot-c { fill: #00b5a5; }
-      .divline { stroke: #0d2f2f; stroke-width: 1; }
-      .corner { fill: none; stroke: #00d9c8; stroke-width: 1.5; }
-    </style>
-    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.08"/>
+    <filter id="liq" x="-2%" y="-2%" width="104%" height="104%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="b"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.55 0.3" numOctaves="3" seed="5" result="n"/>
+      <feDisplacementMap in="b" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feComposite in="d" in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#040c0e"/>
+      <stop offset="100%" stop-color="#020809"/>
+    </linearGradient>
+    <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.055"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.018"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shimAnim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="42%"  stop-color="transparent"/>
+      <stop offset="50%"  stop-color="rgba(200,255,252,0.04)"/>
+      <stop offset="58%"  stop-color="transparent"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <linearGradient id="divV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.05"/>
     </pattern>
   </defs>
 
-  <rect width="900" height="520" class="bg"/>
-  <rect width="900" height="520" fill="url(#grid3)"/>
-  <rect x="0" y="0" width="900" height="520" class="panel-bg"/>
-  <polyline points="0,14 0,0 14,0" class="corner"/>
-  <polyline points="886,0 900,0 900,14" class="corner"/>
-  <polyline points="0,506 0,520 14,520" class="corner"/>
-  <polyline points="886,520 900,520 900,506" class="corner"/>
-
-  <!-- Header -->
-  <text x="18" y="20" font-family="'Share Tech Mono',monospace" font-size="12" fill="#00d9c8">◈</text>
-  <text x="34" y="20" class="hdr">TECH ARSENAL</text>
-  <rect x="818" y="10" width="68" height="14" class="tag-box"/>
-  <text x="852" y="20" text-anchor="middle" class="tag">LOADOUT</text>
-  <line x1="14" y1="28" x2="886" y2="28" class="divline"/>
-
-  <!-- ── COL 1 (x=18) ── -->
-
-  <!-- CORE FRAMEWORK -->
-  <text x="18" y="52" class="cat">CORE FRAMEWORK</text>
-  <line x1="18" y1="56" x2="285" y2="56" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="18" y="62" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="72" r="3" class="dot-t"/>
-  <text x="38" y="76" class="tech">Next.js</text>
-
-  <rect x="146" y="62" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="72" r="3" class="dot-t"/>
-  <text x="166" y="76" class="tech">React</text>
-
-  <rect x="18" y="88" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="98" r="3" class="dot-t"/>
-  <text x="38" y="102" class="tech">TypeScript</text>
-
-  <!-- STYLING / UI -->
-  <text x="18" y="130" class="cat">STYLING / UI</text>
-  <line x1="18" y1="134" x2="285" y2="134" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="18" y="140" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="150" r="3" class="dot-t"/>
-  <text x="38" y="154" class="tech">Tailwind CSS</text>
-
-  <rect x="146" y="140" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="150" r="3" class="dot-t"/>
-  <text x="166" y="154" class="tech">shadcn/ui</text>
-
-  <rect x="18" y="166" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="176" r="3" class="dot-t"/>
-  <text x="38" y="180" class="tech">Radix UI</text>
-
-  <rect x="146" y="166" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="176" r="3" class="dot-t"/>
-  <text x="166" y="180" class="tech">Framer Motion</text>
-
-  <rect x="18" y="192" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="202" r="3" class="dot-t"/>
-  <text x="38" y="206" class="tech">Lucide Icons</text>
-
-  <!-- 3D / VISUALIZATION -->
-  <text x="18" y="234" class="cat">3D / VISUALIZATION</text>
-  <line x1="18" y1="238" x2="285" y2="238" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="18" y="244" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="254" r="3" class="dot-a"/>
-  <text x="38" y="258" class="tech">Three.js</text>
-
-  <rect x="146" y="244" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="254" r="3" class="dot-a"/>
-  <text x="166" y="258" class="tech">React Three Fiber</text>
-
-  <rect x="18" y="270" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="280" r="3" class="dot-a"/>
-  <text x="38" y="284" class="tech">Drei</text>
-
-  <rect x="146" y="270" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="280" r="3" class="dot-a"/>
-  <text x="166" y="284" class="tech">WebGL</text>
-
-  <rect x="18" y="296" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="306" r="3" class="dot-a"/>
-  <text x="38" y="310" class="tech">GLSL</text>
-
-  <!-- STATE MANAGEMENT -->
-  <text x="18" y="338" class="cat">STATE MANAGEMENT</text>
-  <line x1="18" y1="342" x2="285" y2="342" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="18" y="348" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="358" r="3" class="dot-t"/>
-  <text x="38" y="362" class="tech">Zustand</text>
-
-  <rect x="146" y="348" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="358" r="3" class="dot-t"/>
-  <text x="166" y="362" class="tech">Redux Toolkit</text>
-
-  <!-- DATA / APIs -->
-  <text x="18" y="394" class="cat">DATA / APIs</text>
-  <line x1="18" y1="398" x2="285" y2="398" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="18" y="404" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="414" r="3" class="dot-c"/>
-  <text x="38" y="418" class="tech">REST API</text>
-
-  <rect x="146" y="404" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="414" r="3" class="dot-c"/>
-  <text x="166" y="418" class="tech">GraphQL</text>
-
-  <rect x="18" y="430" width="120" height="20" class="tech-box"/>
-  <circle cx="30" cy="440" r="3" class="dot-c"/>
-  <text x="38" y="444" class="tech">tRPC</text>
-
-  <rect x="146" y="430" width="120" height="20" class="tech-box"/>
-  <circle cx="158" cy="440" r="3" class="dot-c"/>
-  <text x="166" y="444" class="tech">OpenAPI/Swagger</text>
-
-  <!-- ── COLUMN DIVIDER ── -->
-  <line x1="305" y1="34" x2="305" y2="506" stroke="#0d2f2f" stroke-width="1"/>
-
-  <!-- ── COL 2 (x=315) ── -->
-
-  <!-- BACKEND -->
-  <text x="318" y="52" class="cat">BACKEND</text>
-  <line x1="318" y1="56" x2="585" y2="56" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="318" y="62" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="72" r="3" class="dot-t"/>
-  <text x="338" y="76" class="tech">Node.js</text>
-
-  <rect x="446" y="62" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="72" r="3" class="dot-t"/>
-  <text x="466" y="76" class="tech">Express</text>
-
-  <rect x="318" y="88" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="98" r="3" class="dot-t"/>
-  <text x="338" y="102" class="tech">NestJS</text>
-
-  <rect x="446" y="88" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="98" r="3" class="dot-t"/>
-  <text x="466" y="102" class="tech">Socket.io</text>
-
-  <!-- AUTHENTICATION -->
-  <text x="318" y="130" class="cat">AUTHENTICATION</text>
-  <line x1="318" y1="134" x2="585" y2="134" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="318" y="140" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="150" r="3" class="dot-t"/>
-  <text x="338" y="154" class="tech">NextAuth.js</text>
-
-  <rect x="446" y="140" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="150" r="3" class="dot-t"/>
-  <text x="466" y="154" class="tech">Clerk</text>
-
-  <rect x="318" y="166" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="176" r="3" class="dot-t"/>
-  <text x="338" y="180" class="tech">Auth0</text>
-
-  <rect x="446" y="166" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="176" r="3" class="dot-t"/>
-  <text x="466" y="180" class="tech">JWT</text>
-
-  <!-- DATABASE -->
-  <text x="318" y="208" class="cat">DATABASE</text>
-  <line x1="318" y1="212" x2="585" y2="212" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="318" y="218" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="228" r="3" class="dot-c"/>
-  <text x="338" y="232" class="tech">PostgreSQL</text>
-
-  <rect x="446" y="218" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="228" r="3" class="dot-c"/>
-  <text x="466" y="232" class="tech">MySQL</text>
-
-  <rect x="318" y="244" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="254" r="3" class="dot-c"/>
-  <text x="338" y="258" class="tech">MongoDB</text>
-
-  <rect x="446" y="244" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="254" r="3" class="dot-c"/>
-  <text x="466" y="258" class="tech">Firebase</text>
-
-  <!-- ORM -->
-  <text x="318" y="286" class="cat">ORM</text>
-  <line x1="318" y1="290" x2="585" y2="290" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="318" y="296" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="306" r="3" class="dot-c"/>
-  <text x="338" y="310" class="tech">Prisma</text>
-
-  <rect x="446" y="296" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="306" r="3" class="dot-c"/>
-  <text x="466" y="310" class="tech">Drizzle ORM</text>
-
-  <rect x="318" y="322" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="332" r="3" class="dot-c"/>
-  <text x="338" y="336" class="tech">TypeORM</text>
-
-  <!-- TESTING -->
-  <text x="318" y="364" class="cat">TESTING</text>
-  <line x1="318" y1="368" x2="585" y2="368" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="318" y="374" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="384" r="3" class="dot-t"/>
-  <text x="338" y="388" class="tech">Jest</text>
-
-  <rect x="446" y="374" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="384" r="3" class="dot-t"/>
-  <text x="466" y="388" class="tech">Vitest</text>
-
-  <rect x="318" y="400" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="410" r="3" class="dot-t"/>
-  <text x="338" y="414" class="tech">Testing Library</text>
-
-  <rect x="446" y="400" width="120" height="20" class="tech-box"/>
-  <circle cx="458" cy="410" r="3" class="dot-t"/>
-  <text x="466" y="414" class="tech">Cypress</text>
-
-  <rect x="318" y="426" width="120" height="20" class="tech-box"/>
-  <circle cx="330" cy="436" r="3" class="dot-t"/>
-  <text x="338" y="440" class="tech">Playwright</text>
-
-  <!-- ── COLUMN DIVIDER ── -->
-  <line x1="605" y1="34" x2="605" y2="506" stroke="#0d2f2f" stroke-width="1"/>
-
-  <!-- ── COL 3 (x=618) ── -->
-
-  <!-- CLOUD / DEPLOYMENT -->
-  <text x="618" y="52" class="cat">CLOUD / DEPLOYMENT</text>
-  <line x1="618" y1="56" x2="886" y2="56" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="618" y="62" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="72" r="3" class="dot-a"/>
-  <text x="638" y="76" class="tech">Vercel</text>
-
-  <rect x="746" y="62" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="72" r="3" class="dot-a"/>
-  <text x="766" y="76" class="tech">AWS</text>
-
-  <rect x="618" y="88" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="98" r="3" class="dot-a"/>
-  <text x="638" y="102" class="tech">Google Cloud</text>
-
-  <rect x="746" y="88" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="98" r="3" class="dot-a"/>
-  <text x="766" y="102" class="tech">Azure</text>
-
-  <!-- CONTAINERS -->
-  <text x="618" y="130" class="cat">CONTAINERS</text>
-  <line x1="618" y1="134" x2="886" y2="134" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="618" y="140" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="150" r="3" class="dot-a"/>
-  <text x="638" y="154" class="tech">Docker</text>
-
-  <rect x="746" y="140" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="150" r="3" class="dot-a"/>
-  <text x="766" y="154" class="tech">Kubernetes</text>
-
-  <rect x="618" y="166" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="176" r="3" class="dot-a"/>
-  <text x="638" y="180" class="tech">Cloudflare CDN</text>
-
-  <!-- SECURITY -->
-  <text x="618" y="208" class="cat">SECURITY</text>
-  <line x1="618" y1="212" x2="886" y2="212" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="618" y="218" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="228" r="3" class="dot-t"/>
-  <text x="638" y="232" class="tech">OAuth2</text>
-
-  <rect x="746" y="218" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="228" r="3" class="dot-t"/>
-  <text x="766" y="232" class="tech">CSRF / CORS</text>
-
-  <rect x="618" y="244" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="254" r="3" class="dot-t"/>
-  <text x="638" y="258" class="tech">Helmet.js</text>
-
-  <rect x="746" y="244" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="254" r="3" class="dot-t"/>
-  <text x="766" y="258" class="tech">RBAC</text>
-
-  <!-- MONITORING -->
-  <text x="618" y="286" class="cat">MONITORING</text>
-  <line x1="618" y1="290" x2="886" y2="290" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="618" y="296" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="306" r="3" class="dot-c"/>
-  <text x="638" y="310" class="tech">Sentry</text>
-
-  <rect x="746" y="296" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="306" r="3" class="dot-c"/>
-  <text x="766" y="310" class="tech">Datadog</text>
-
-  <rect x="618" y="322" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="332" r="3" class="dot-c"/>
-  <text x="638" y="336" class="tech">Prometheus</text>
-
-  <rect x="746" y="322" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="332" r="3" class="dot-c"/>
-  <text x="766" y="336" class="tech">Grafana</text>
-
-  <!-- DEV TOOLS -->
-  <text x="618" y="364" class="cat">DEV TOOLS</text>
-  <line x1="618" y1="368" x2="886" y2="368" stroke="#0d2f2f" stroke-width="1"/>
-
-  <rect x="618" y="374" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="384" r="3" class="dot-t"/>
-  <text x="638" y="388" class="tech">Git / GitHub</text>
-
-  <rect x="746" y="374" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="384" r="3" class="dot-t"/>
-  <text x="766" y="388" class="tech">ESLint / Prettier</text>
-
-  <rect x="618" y="400" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="410" r="3" class="dot-t"/>
-  <text x="638" y="414" class="tech">TurboRepo</text>
-
-  <rect x="746" y="400" width="120" height="20" class="tech-box"/>
-  <circle cx="758" cy="410" r="3" class="dot-t"/>
-  <text x="766" y="414" class="tech">pnpm</text>
-
-  <rect x="618" y="426" width="120" height="20" class="tech-box"/>
-  <circle cx="630" cy="436" r="3" class="dot-t"/>
-  <text x="638" y="440" class="tech">Husky</text>
-
-  <!-- Legend -->
-  <line x1="14" y1="476" x2="886" y2="476" stroke="#0d2f2f" stroke-width="1"/>
-  <circle cx="25" cy="492" r="3" class="dot-t"/>
-  <text x="33" y="496" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">FRONTEND / STACK</text>
-  <circle cx="185" cy="492" r="3" class="dot-a"/>
-  <text x="193" y="496" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">CLOUD / INFRA</text>
-  <circle cx="335" cy="492" r="3" class="dot-c"/>
-  <text x="343" y="496" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">DATA / DB / ORM</text>
+  <rect width="900" height="420" fill="url(#bgG)"/>
+  <rect width="900" height="420" fill="url(#grid)"/>
+
+  <!-- Glass panel -->
+  <rect width="900" height="420" fill="url(#glassL)" filter="url(#liq)"/>
+  <rect x="0" y="0" width="900" height="1" fill="url(#shine)" opacity="0.5"/>
+
+  <!-- Shimmer -->
+  <rect x="-900" y="0" width="900" height="420" fill="url(#shimAnim)">
+    <animateTransform attributeName="transform" type="translate"
+      from="-900 0" to="1800 0" dur="9s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="0.5" y="0.5" width="899" height="419" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
+  <polyline points="0,14 0,0 14,0"           fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="886,0 900,0 900,14"       fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="0,406 0,420 14,420"       fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="886,420 900,420 900,406"  fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+
+  <text x="36" y="30" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="3">STACK</text>
+  <rect x="36" y="38" width="828" height="1" fill="#00d9c8" opacity="0.07"/>
+
+  <!-- Column dividers -->
+  <rect x="310" y="44" width="1" height="356" fill="url(#divV)"/>
+  <rect x="606" y="44" width="1" height="356" fill="url(#divV)"/>
+
+  <!-- ─── COL 1: FRONTEND + 3D ─── -->
+  <text x="36" y="62" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">FRONTEND</text>
+  <circle cx="41" cy="78"  r="2.5" fill="#00d9c8" opacity="0.7"/><text x="52" y="82"  font-family="Share Tech Mono,monospace" font-size="12" fill="#4a8a88">Next.js</text>
+  <circle cx="41" cy="100" r="2.5" fill="#00d9c8" opacity="0.7"/><text x="52" y="104" font-family="Share Tech Mono,monospace" font-size="12" fill="#4a8a88">React</text>
+  <circle cx="41" cy="122" r="2.5" fill="#00d9c8" opacity="0.7"/><text x="52" y="126" font-family="Share Tech Mono,monospace" font-size="12" fill="#4a8a88">TypeScript</text>
+  <circle cx="41" cy="144" r="2.5" fill="#00d9c8" opacity="0.5"/><text x="52" y="148" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a6a68">Tailwind CSS</text>
+  <circle cx="41" cy="166" r="2.5" fill="#00d9c8" opacity="0.4"/><text x="52" y="170" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">shadcn/ui</text>
+  <circle cx="41" cy="188" r="2.5" fill="#00d9c8" opacity="0.4"/><text x="52" y="192" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Radix UI</text>
+  <circle cx="41" cy="210" r="2.5" fill="#00d9c8" opacity="0.3"/><text x="52" y="214" font-family="Share Tech Mono,monospace" font-size="12" fill="#1a4040">Framer Motion</text>
+
+  <rect x="36" y="228" width="256" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="36" y="244" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">3D / VISUALIZATION</text>
+  <circle cx="41" cy="260" r="2.5" fill="#ffab00" opacity="0.8"/><text x="52" y="264" font-family="Share Tech Mono,monospace" font-size="12" fill="#8a6a28">Three.js</text>
+  <circle cx="41" cy="282" r="2.5" fill="#ffab00" opacity="0.7"/><text x="52" y="286" font-family="Share Tech Mono,monospace" font-size="12" fill="#8a6a28">React Three Fiber</text>
+  <circle cx="41" cy="304" r="2.5" fill="#ffab00" opacity="0.5"/><text x="52" y="308" font-family="Share Tech Mono,monospace" font-size="12" fill="#5a4818">Drei</text>
+  <circle cx="41" cy="326" r="2.5" fill="#ffab00" opacity="0.5"/><text x="52" y="330" font-family="Share Tech Mono,monospace" font-size="12" fill="#5a4818">WebGL</text>
+  <circle cx="41" cy="348" r="2.5" fill="#ffab00" opacity="0.3"/><text x="52" y="352" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a3010">GLSL / Shaders</text>
+
+  <rect x="36" y="366" width="256" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="36" y="382" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">STATE</text>
+  <circle cx="41" cy="398" r="2.5" fill="#00d9c8" opacity="0.4"/><text x="52" y="402" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Zustand</text>
+
+  <!-- ─── COL 2: BACKEND + DB ─── -->
+  <text x="330" y="62" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">BACKEND</text>
+  <circle cx="335" cy="78"  r="2.5" fill="#00d9c8" opacity="0.7"/><text x="346" y="82"  font-family="Share Tech Mono,monospace" font-size="12" fill="#4a8a88">Node.js</text>
+  <circle cx="335" cy="100" r="2.5" fill="#00d9c8" opacity="0.6"/><text x="346" y="104" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">Express</text>
+  <circle cx="335" cy="122" r="2.5" fill="#00d9c8" opacity="0.6"/><text x="346" y="126" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">NestJS</text>
+  <circle cx="335" cy="144" r="2.5" fill="#00d9c8" opacity="0.4"/><text x="346" y="148" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Socket.io</text>
+  <circle cx="335" cy="166" r="2.5" fill="#00d9c8" opacity="0.4"/><text x="346" y="170" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Next.js API Routes</text>
+
+  <rect x="330" y="184" width="256" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="330" y="200" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">AUTH</text>
+  <circle cx="335" cy="216" r="2.5" fill="#00d9c8" opacity="0.5"/><text x="346" y="220" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a6a68">NextAuth.js</text>
+  <circle cx="335" cy="238" r="2.5" fill="#00d9c8" opacity="0.4"/><text x="346" y="242" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Clerk</text>
+  <circle cx="335" cy="260" r="2.5" fill="#00d9c8" opacity="0.3"/><text x="346" y="264" font-family="Share Tech Mono,monospace" font-size="12" fill="#1a4040">JWT / OAuth2</text>
+
+  <rect x="330" y="278" width="256" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="330" y="294" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">DATABASE</text>
+  <circle cx="335" cy="310" r="2.5" fill="#5a9a98" opacity="0.8"/><text x="346" y="314" font-family="Share Tech Mono,monospace" font-size="12" fill="#4a8a88">PostgreSQL</text>
+  <circle cx="335" cy="332" r="2.5" fill="#5a9a98" opacity="0.7"/><text x="346" y="336" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">MySQL</text>
+  <circle cx="335" cy="354" r="2.5" fill="#5a9a98" opacity="0.6"/><text x="346" y="358" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a6a68">MongoDB</text>
+  <circle cx="335" cy="376" r="2.5" fill="#5a9a98" opacity="0.5"/><text x="346" y="380" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Firebase</text>
+  <circle cx="335" cy="398" r="2.5" fill="#5a9a98" opacity="0.4"/><text x="346" y="402" font-family="Share Tech Mono,monospace" font-size="12" fill="#1a4040">Prisma · Drizzle</text>
+
+  <!-- ─── COL 3: CLOUD + DATA + DX ─── -->
+  <text x="626" y="62" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">CLOUD / INFRA</text>
+  <circle cx="631" cy="78"  r="2.5" fill="#ffab00" opacity="0.7"/><text x="642" y="82"  font-family="Share Tech Mono,monospace" font-size="12" fill="#8a6a28">Vercel</text>
+  <circle cx="631" cy="100" r="2.5" fill="#ffab00" opacity="0.7"/><text x="642" y="104" font-family="Share Tech Mono,monospace" font-size="12" fill="#8a6a28">AWS</text>
+  <circle cx="631" cy="122" r="2.5" fill="#ffab00" opacity="0.6"/><text x="642" y="126" font-family="Share Tech Mono,monospace" font-size="12" fill="#6a5020">Google Cloud</text>
+  <circle cx="631" cy="144" r="2.5" fill="#ffab00" opacity="0.5"/><text x="642" y="148" font-family="Share Tech Mono,monospace" font-size="12" fill="#5a4018">Azure</text>
+  <circle cx="631" cy="166" r="2.5" fill="#ffab00" opacity="0.5"/><text x="642" y="170" font-family="Share Tech Mono,monospace" font-size="12" fill="#5a4018">Docker</text>
+  <circle cx="631" cy="188" r="2.5" fill="#ffab00" opacity="0.4"/><text x="642" y="192" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a3010">Kubernetes</text>
+  <circle cx="631" cy="210" r="2.5" fill="#ffab00" opacity="0.3"/><text x="642" y="214" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a2208">Cloudflare</text>
+
+  <rect x="626" y="228" width="256" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="626" y="244" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">DATA / APIs</text>
+  <circle cx="631" cy="260" r="2.5" fill="#5a9a98" opacity="0.7"/><text x="642" y="264" font-family="Share Tech Mono,monospace" font-size="12" fill="#4a8a88">GraphQL</text>
+  <circle cx="631" cy="282" r="2.5" fill="#5a9a98" opacity="0.6"/><text x="642" y="286" font-family="Share Tech Mono,monospace" font-size="12" fill="#3a7a78">tRPC</text>
+  <circle cx="631" cy="304" r="2.5" fill="#5a9a98" opacity="0.5"/><text x="642" y="308" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a6a68">REST</text>
+  <circle cx="631" cy="326" r="2.5" fill="#5a9a98" opacity="0.4"/><text x="642" y="330" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">OpenAPI / Swagger</text>
+
+  <rect x="626" y="344" width="256" height="1" fill="#00d9c8" opacity="0.05"/>
+  <text x="626" y="360" font-family="Share Tech Mono,monospace" font-size="9" fill="#0d2828" letter-spacing="2">MONITORING</text>
+  <circle cx="631" cy="376" r="2.5" fill="#5a9a98" opacity="0.4"/><text x="642" y="380" font-family="Share Tech Mono,monospace" font-size="12" fill="#1e5050">Sentry · Datadog</text>
+  <circle cx="631" cy="398" r="2.5" fill="#5a9a98" opacity="0.3"/><text x="642" y="402" font-family="Share Tech Mono,monospace" font-size="12" fill="#1a4040">Prometheus · Grafana</text>
 </svg>

@@ -1,137 +1,193 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=Orbitron:wght@700;900&amp;display=swap');
-      .bg { fill: #080f10; }
-      .border { fill: none; stroke: #0d2f2f; stroke-width: 1; }
-      .accent { fill: none; stroke: #00d9c8; stroke-width: 2; }
-      .title { font-family: 'Orbitron', 'Share Tech Mono', monospace; font-size: 38px; font-weight: 900; fill: #00d9c8; letter-spacing: 4px; }
-      .sub { font-family: 'Share Tech Mono', monospace; font-size: 12px; fill: #2a5a5a; letter-spacing: 5px; }
-      .meta-key { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #2a5a5a; }
-      .meta-val { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #00d9c8; }
-      .badge-bg { fill: rgba(0,217,200,0.06); stroke: #00d9c8; stroke-width: 1; }
-      .badge-text { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #00d9c8; letter-spacing: 2px; }
-      .badge-bg2 { fill: rgba(255,171,0,0.06); stroke: #ffab00; stroke-width: 1; }
-      .badge-text2 { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #ffab00; letter-spacing: 2px; }
-      .prompt { font-family: 'Share Tech Mono', monospace; font-size: 13px; fill: #00d9c8; }
-      .cmd { font-family: 'Share Tech Mono', monospace; font-size: 13px; fill: #a8cece; }
-      .divider { stroke: #0d2f2f; stroke-width: 1; }
-      .scanline { fill: #00d9c8; opacity: 0.06; }
-      .corner { fill: none; stroke: #00d9c8; stroke-width: 2; }
-      .glow { filter: drop-shadow(0 0 8px #00d9c8); }
-      .dot { fill: #00d9c8; }
-      .dot-pulse { fill: #00d9c8; }
-    </style>
 
-    <!-- Scanline gradient -->
-    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00d9c8;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#00d9c8;stop-opacity:0.6"/>
-      <stop offset="100%" style="stop-color:#00d9c8;stop-opacity:0"/>
-    </linearGradient>
+    <!-- GLASS FILTERS -->
+    <!-- Liquid distortion on the panel surface -->
+    <filter id="liquidGlass" x="-2%" y="-2%" width="104%" height="104%">
+      <!-- Frosted blur -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blurred"/>
+      <!-- Turbulence for liquid texture -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.65 0.35" numOctaves="3" seed="7" result="noise"/>
+      <!-- Subtle displacement — liquid refraction -->
+      <feDisplacementMap in="blurred" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feComposite in="displaced" in2="SourceGraphic" operator="atop"/>
+    </filter>
 
-    <!-- Title glow filter -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <!-- Soft inner glow filter -->
+    <filter id="titleGlow" x="-5%" y="-30%" width="110%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
+    <!-- Edge frost blur for glass border -->
+    <filter id="frostEdge" x="-1%" y="-1%" width="102%" height="102%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2"/>
+    </filter>
+
+    <!-- GRADIENTS -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="900" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#040c0e"/>
+      <stop offset="100%" stop-color="#020809"/>
+    </linearGradient>
+
+    <!-- Glass panel background — very subtle teal tint -->
+    <linearGradient id="glassBg" x1="0" y1="0" x2="0" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.06"/>
+      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- Top edge shine — the "glass catching light" effect -->
+    <linearGradient id="topShine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
+      <stop offset="20%"  stop-color="#00d9c8" stop-opacity="0.0"/>
+      <stop offset="38%"  stop-color="#c8fffc" stop-opacity="0.6"/>
+      <stop offset="50%"  stop-color="#ffffff"  stop-opacity="0.9"/>
+      <stop offset="62%"  stop-color="#c8fffc" stop-opacity="0.6"/>
+      <stop offset="80%"  stop-color="#00d9c8" stop-opacity="0.0"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Shimmer sweep gradient -->
+    <linearGradient id="shimmer" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="transparent"/>
+      <stop offset="45%"  stop-color="transparent"/>
+      <stop offset="50%"  stop-color="rgba(200,255,252,0.06)"/>
+      <stop offset="55%"  stop-color="transparent"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+
+    <!-- Bottom fade -->
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Stat divider -->
+    <linearGradient id="divV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Teal fade horizontal -->
+    <linearGradient id="tealH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#00d9c8" stop-opacity="0.8"/>
+      <stop offset="70%"  stop-color="#00d9c8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
+
     <!-- Grid pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.15"/>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d9c8" stroke-width="0.4" opacity="0.07"/>
     </pattern>
+
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="200" class="bg"/>
-  <rect width="900" height="200" fill="url(#grid)"/>
+  <!-- BG + Grid -->
+  <rect width="900" height="210" fill="url(#bgGrad)"/>
+  <rect width="900" height="210" fill="url(#grid)"/>
 
-  <!-- Scanlines overlay -->
-  <rect width="900" height="200" fill="#00d9c8" opacity="0.012">
-    <animate attributeName="opacity" values="0.012;0.018;0.012" dur="4s" repeatCount="indefinite"/>
+  <!-- Background ambient glow orbs -->
+  <ellipse cx="120" cy="60"  rx="200" ry="120" fill="#00d9c8" opacity="0.025" filter="url(#frostEdge)">
+    <animate attributeName="rx" values="200;220;200" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.025;0.04;0.025" dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="780" cy="160" rx="180" ry="100" fill="#00b5a5" opacity="0.02" filter="url(#frostEdge)">
+    <animate attributeName="rx" values="180;160;180" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- ═══ GLASS PANEL ═══ -->
+
+  <!-- Panel base — frosted glass bg -->
+  <rect x="0" y="0" width="900" height="210" fill="url(#glassBg)" filter="url(#liquidGlass)"/>
+
+  <!-- Glass surface sheen — slight gradient from top -->
+  <rect x="0" y="0" width="900" height="80" fill="url(#bottomFade)" opacity="0.4"/>
+
+  <!-- Top edge highlight — the key liquid glass effect: bright catch-light along top edge -->
+  <rect x="0" y="0" width="900" height="1" fill="url(#topShine)"/>
+
+  <!-- Animated shimmer sweep across panel -->
+  <rect x="-900" y="0" width="900" height="210" fill="url(#shimmer)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate"
+      from="-900 0" to="1800 0" dur="6s" repeatCount="indefinite" calcMode="spline"
+      keySplines="0.4 0 0.6 1"/>
   </rect>
 
-  <!-- Outer border -->
-  <rect x="1" y="1" width="898" height="198" class="border"/>
+  <!-- Outer glass border — subtle -->
+  <rect x="0.5" y="0.5" width="899" height="209" fill="none"
+        stroke="#00d9c8" stroke-width="1" stroke-opacity="0.12"/>
 
-  <!-- Top accent bar -->
-  <rect x="0" y="0" width="900" height="2" fill="url(#scanGrad)">
-    <animateTransform attributeName="transform" type="translate" from="-900 0" to="900 0" dur="4s" repeatCount="indefinite"/>
-  </rect>
-  <rect x="0" y="0" width="900" height="2" fill="#00d9c8" opacity="0.15"/>
+  <!-- Corner brackets — crisp teal -->
+  <polyline points="0,16 0,0 16,0"     fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
+  <polyline points="884,0 900,0 900,16" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
+  <polyline points="0,194 0,210 16,210" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
+  <polyline points="884,210 900,210 900,194" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
 
-  <!-- Bottom accent bar -->
-  <rect x="0" y="198" width="900" height="2" fill="#00d9c8" opacity="0.15"/>
+  <!-- ── CONTENT ── -->
 
-  <!-- Corner brackets TL -->
-  <polyline points="0,20 0,0 20,0" class="corner"/>
-  <!-- Corner brackets TR -->
-  <polyline points="880,0 900,0 900,20" class="corner"/>
-  <!-- Corner brackets BL -->
-  <polyline points="0,180 0,200 20,200" class="corner"/>
-  <!-- Corner brackets BR -->
-  <polyline points="880,200 900,200 900,180" class="corner"/>
-
-  <!-- Status dot -->
-  <circle cx="28" cy="28" r="4" class="dot-pulse">
-    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
+  <!-- Status indicator -->
+  <circle cx="845" cy="22" r="3.5" fill="#00d9c8">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="3.5;4.5;3.5" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="28" cy="28" r="4" fill="none" stroke="#00d9c8" stroke-width="1" opacity="0.4">
-    <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
+  <circle cx="845" cy="22" r="7" fill="none" stroke="#00d9c8" stroke-width="0.8" opacity="0.2">
+    <animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
   </circle>
+  <text x="856" y="26" font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" letter-spacing="1" opacity="0.6">ONLINE</text>
 
-  <!-- CLEARANCE label top -->
-  <text x="42" y="24" class="sub" font-size="10">OPERATOR PROFILE // CLEARANCE: PUBLIC // ID: ME-MOIR</text>
+  <!-- TITLE -->
+  <text x="48" y="100"
+        font-family="Orbitron,Share Tech Mono,monospace"
+        font-size="50" font-weight="900" letter-spacing="5"
+        fill="#00d9c8" filter="url(#titleGlow)" opacity="0.95">JANSSEN JEKK</text>
 
-  <!-- Main Title -->
-  <text x="30" y="90" class="title" filter="url(#glow)">JANSSEN JEKK</text>
+  <!-- Subtle title echo / reflection below — glass depth illusion -->
+  <text x="48" y="108"
+        font-family="Orbitron,Share Tech Mono,monospace"
+        font-size="50" font-weight="900" letter-spacing="5"
+        fill="#00d9c8" opacity="0.04"
+        transform="scale(1,-1) translate(0,-216)">JANSSEN JEKK</text>
 
-  <!-- Subtitle -->
-  <text x="32" y="112" class="sub">@ME-MOIR  //  GITHUB  //  FULL-STACK + 3D + CLOUD</text>
+  <!-- Handle -->
+  <text x="52" y="122"
+        font-family="Share Tech Mono,monospace"
+        font-size="11" letter-spacing="5" fill="#00d9c8" opacity="0.2">@ME-MOIR</text>
 
-  <!-- Divider line -->
-  <line x1="30" y1="128" x2="560" y2="128" class="divider"/>
+  <!-- Thin divider -->
+  <rect x="48" y="136" width="380" height="1" fill="#00d9c8" opacity="0.08"/>
 
-  <!-- Badges -->
-  <rect x="30" y="138" width="90" height="20" rx="0" class="badge-bg"/>
-  <text x="75" y="152" text-anchor="middle" class="badge-text">FULL-STACK</text>
-
-  <rect x="128" y="138" width="70" height="20" rx="0" class="badge-bg"/>
-  <text x="163" y="152" text-anchor="middle" class="badge-text">3D / WEBGL</text>
-
-  <rect x="206" y="138" width="90" height="20" rx="0" class="badge-bg2"/>
-  <text x="251" y="152" text-anchor="middle" class="badge-text2">CLOUD+DEVOPS</text>
-
-  <rect x="304" y="138" width="84" height="20" rx="0" class="badge-bg"/>
-  <text x="346" y="152" text-anchor="middle" class="badge-text">DATA + APIS</text>
+  <!-- Focus areas -->
+  <text x="50" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Systems Architecture</text>
+  <text x="248" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
+  <text x="260" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Defense Tech</text>
+  <text x="362" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
+  <text x="374" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Full-Stack</text>
+  <text x="456" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
+  <text x="468" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">3D / WebGL</text>
+  <text x="568" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
+  <text x="580" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Data &amp; APIs</text>
 
   <!-- Prompt line -->
-  <text x="30" y="185" class="prompt">root@janssen-jekk:~$</text>
-  <text x="210" y="185" class="cmd">Building intelligent systems. Shipping in the dark.</text>
-  <rect x="758" y="174" width="8" height="14" fill="#00d9c8">
-    <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+  <text x="50" y="188" font-family="Share Tech Mono,monospace" font-size="12" fill="#00d9c8" opacity="0.25">$</text>
+  <text x="64" y="188" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a6a68">ship in silence.</text>
+  <rect x="204" y="176" width="6" height="14" fill="#00d9c8" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0;0.5" dur="1s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- RIGHT: meta info -->
-  <line x1="610" y1="30" x2="610" y2="170" stroke="#0d2f2f" stroke-width="1"/>
+  <!-- RIGHT: Stats — vertical dividers with glass feel -->
+  <rect x="724" y="72" width="1" height="80" fill="url(#divV)"/>
+  <rect x="812" y="72" width="1" height="80" fill="url(#divV)"/>
 
-  <text x="625" y="55" class="meta-key">REPOS</text>
-  <text x="720" y="55" class="meta-val">04</text>
+  <text x="744" y="102" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="2">REPOS</text>
+  <text x="742" y="126" font-family="Orbitron,monospace" font-size="26" font-weight="700" fill="#00d9c8" opacity="0.9" filter="url(#titleGlow)">04</text>
 
-  <text x="625" y="80" class="meta-key">STARS</text>
-  <text x="720" y="80" class="meta-val">01</text>
+  <text x="832" y="102" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="2">STARS</text>
+  <text x="830" y="126" font-family="Orbitron,monospace" font-size="26" font-weight="700" fill="#00d9c8" opacity="0.9" filter="url(#titleGlow)">01</text>
 
-  <text x="625" y="105" class="meta-key">FOLLOWERS</text>
-  <text x="720" y="105" class="meta-val">02</text>
-
-  <text x="625" y="130" class="meta-key">NODE</text>
-  <text x="720" y="130" class="meta-val">GH-PROD-01</text>
-
-  <text x="625" y="155" class="meta-key">STATUS</text>
-  <text x="720" y="155" class="meta-val">ONLINE</text>
-
-  <!-- Watermark -->
-  <text x="820" y="100" font-family="'Share Tech Mono',monospace" font-size="52" fill="#00d9c8" opacity="0.03" font-weight="900" transform="rotate(90,820,100)">CLASSIFIED</text>
+  <!-- Bottom accent line -->
+  <rect x="0" y="209" width="900" height="1" fill="url(#tealH)" opacity="0.4"/>
 </svg>

@@ -1,155 +1,137 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240">
   <defs>
-    <style>
-      .bg { fill: #080f10; }
-      .panel-bg { fill: #080f10; stroke: #0d2f2f; stroke-width: 1; }
-      .hdr { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #2a5a5a; letter-spacing: 3px; }
-      .icon { fill: #00d9c8; font-family: 'Share Tech Mono', monospace; font-size: 12px; }
-      .tag { font-family: 'Share Tech Mono', monospace; font-size: 9px; fill: #0d2f2f; }
-      .tag-box { fill: none; stroke: #0d2f2f; stroke-width: 1; }
-      .key { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #2a5a5a; }
-      .val { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #a8cece; }
-      .val-teal { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #00d9c8; }
-      .val-cyan { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #00d9c8; }
-      .skill-name { font-family: 'Share Tech Mono', monospace; font-size: 12px; fill: #a8cece; }
-      .skill-pct { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #00d9c8; }
-      .bar-bg { fill: rgba(0,217,200,0.06); stroke: #0d2f2f; stroke-width: 1; }
-      .avatar-box { fill: #0a1a1a; stroke: #00d9c8; stroke-width: 2; }
-      .avatar-text { font-family: 'Share Tech Mono', monospace; font-size: 24px; fill: #00d9c8; font-weight: bold; }
-      .corner { fill: none; stroke: #00d9c8; stroke-width: 1.5; }
-      .divline { stroke: #0d2f2f; stroke-width: 1; }
-      .section-label { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #2a5a5a; letter-spacing: 3px; }
-    </style>
-    <filter id="glow2">
+    <filter id="liq" x="-2%" y="-2%" width="104%" height="104%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="b"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.6 0.3" numOctaves="3" seed="12" result="n"/>
+      <feDisplacementMap in="b" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feComposite in="d" in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <filter id="barGlow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00b5a5"/>
-      <stop offset="100%" style="stop-color:#00d9c8"/>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#040c0e"/>
+      <stop offset="100%" stop-color="#020809"/>
     </linearGradient>
-    <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.1"/>
+    <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="barFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#004a44"/>
+      <stop offset="100%" stop-color="#00d9c8"/>
+    </linearGradient>
+    <linearGradient id="divV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.05"/>
     </pattern>
   </defs>
 
-  <rect width="900" height="260" class="bg"/>
-  <rect width="900" height="260" fill="url(#grid2)"/>
+  <rect width="900" height="240" fill="url(#bgG)"/>
+  <rect width="900" height="240" fill="url(#grid)"/>
 
-  <!-- LEFT PANEL: Operator Data (w=430) -->
-  <rect x="0" y="0" width="440" height="260" class="panel-bg"/>
-  <polyline points="0,14 0,0 14,0" class="corner"/>
-  <polyline points="426,0 440,0 440,14" class="corner"/>
-  <polyline points="0,246 0,260 14,260" class="corner"/>
-  <polyline points="426,260 440,260 440,246" class="corner"/>
+  <!-- ─── LEFT PANEL: Profile ─── -->
+  <rect x="0" y="0" width="436" height="240" fill="url(#glassL)" filter="url(#liq)"/>
+  <rect x="0" y="0" width="436" height="1"   fill="url(#shine)" opacity="0.5"/>
+  <rect x="0.5" y="0.5" width="435" height="239" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
+  <polyline points="0,14 0,0 14,0"     fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="422,0 436,0 436,14" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="0,226 0,240 14,240" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="422,240 436,240 436,226" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
 
-  <!-- Panel header -->
-  <text x="18" y="20" class="icon">◈</text>
-  <text x="34" y="20" class="hdr">OPERATOR DATA</text>
-  <rect x="370" y="10" width="56" height="14" class="tag-box"/>
-  <text x="398" y="20" text-anchor="middle" class="tag">PROFILE</text>
-  <line x1="14" y1="28" x2="426" y2="28" class="divline"/>
+  <text x="30" y="28" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="3">OPERATOR</text>
+  <rect x="30" y="34" width="376" height="1" fill="#00d9c8" opacity="0.05"/>
 
-  <!-- Avatar box -->
-  <rect x="18" y="40" width="72" height="72" class="avatar-box">
-    <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite"/>
-  </rect>
-  <!-- Scan line on avatar -->
-  <rect x="18" y="40" width="72" height="3" fill="#00d9c8" opacity="0.5">
-    <animateTransform attributeName="transform" type="translate" from="0,0" to="0,69" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
-  </rect>
-  <text x="54" y="82" text-anchor="middle" class="avatar-text">JJ</text>
+  <!-- Profile rows -->
+  <text x="30" y="58"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">handle</text>
+  <text x="130" y="58" font-family="Share Tech Mono,monospace" font-size="11" fill="#00d9c8" opacity="0.8">Me-moir</text>
+  <rect x="30" y="64" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
 
-  <!-- Operator rows -->
-  <text x="106" y="56" class="key">HANDLE</text>
-  <text x="200" y="56" class="val-teal">Me-moir</text>
+  <text x="30" y="84"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">name</text>
+  <text x="130" y="84" font-family="Share Tech Mono,monospace" font-size="11" fill="#5a9a98">Janssen Jekk</text>
+  <rect x="30" y="90" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
 
-  <text x="106" y="74" class="key">NAME</text>
-  <text x="200" y="74" class="val">Janssen Jekk</text>
+  <text x="30" y="110"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">class</text>
+  <text x="130" y="110" font-family="Share Tech Mono,monospace" font-size="11" fill="#5a9a98">Full-Stack · 3D · Cloud</text>
+  <rect x="30" y="116" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
 
-  <text x="106" y="92" class="key">CLASS</text>
-  <text x="200" y="92" class="val-cyan">Full-Stack + 3D + Cloud</text>
+  <text x="30" y="136"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">stack</text>
+  <text x="130" y="136" font-family="Share Tech Mono,monospace" font-size="11" fill="#3a7a78">Next.js · React · TS</text>
+  <rect x="30" y="142" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
 
-  <text x="106" y="110" class="key">FOCUS</text>
-  <text x="200" y="110" class="val">Intelligent Systems</text>
+  <text x="30" y="162"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">cloud</text>
+  <text x="130" y="162" font-family="Share Tech Mono,monospace" font-size="11" fill="#3a7a78">AWS · GCP · Vercel</text>
+  <rect x="30" y="168" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
 
-  <line x1="18" y1="124" x2="426" y2="124" class="divline"/>
+  <text x="30" y="188"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">db</text>
+  <text x="130" y="188" font-family="Share Tech Mono,monospace" font-size="11" fill="#3a7a78">PostgreSQL · Prisma</text>
+  <rect x="30" y="194" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
 
-  <!-- Extra rows below divider -->
-  <text x="18" y="142" class="key">CLOUD</text>
-  <text x="100" y="142" class="val">Vercel · AWS · GCP · Azure</text>
+  <text x="30" y="214"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">mode</text>
+  <text x="130" y="214" font-family="Share Tech Mono,monospace" font-size="11" fill="#00d9c8" opacity="0.6">lowkey</text>
 
-  <text x="18" y="160" class="key">COMMS</text>
-  <text x="100" y="160" class="val">Open to collaboration</text>
+  <!-- Vertical divider gap -->
+  <rect x="448" y="20" width="1" height="200" fill="url(#divV)"/>
 
-  <text x="18" y="178" class="key">MODE</text>
-  <text x="100" y="178" class="val-teal">lowkey</text>
+  <!-- ─── RIGHT PANEL: Skills ─── -->
+  <rect x="464" y="0" width="436" height="240" fill="url(#glassL)" filter="url(#liq)"/>
+  <rect x="464" y="0" width="436" height="1"   fill="url(#shine)" opacity="0.5"/>
+  <rect x="464.5" y="0.5" width="435" height="239" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
+  <polyline points="464,14 464,0 478,0"     fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="886,0 900,0 900,14"      fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="464,226 464,240 478,240" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="886,240 900,240 900,226" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
 
-  <line x1="18" y1="192" x2="426" y2="192" class="divline"/>
+  <text x="494" y="28" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="3">PROFICIENCY</text>
+  <rect x="494" y="34" width="376" height="1" fill="#00d9c8" opacity="0.05"/>
 
-  <!-- Motto -->
-  <text x="18" y="212" font-family="'Share Tech Mono',monospace" font-size="11" fill="#2a5a5a">// "Ship in silence. Let the commits speak."</text>
-
-  <!-- Live indicator -->
-  <circle cx="22" cy="238" r="3" fill="#00d9c8">
-    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
-  </circle>
-  <text x="32" y="242" font-family="'Share Tech Mono',monospace" font-size="10" fill="#00d9c8">LIVE</text>
-  <text x="70" y="242" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">// SYS: ONLINE // NODE: GH-PROD-01</text>
-
-
-  <!-- RIGHT PANEL: Skill Proficiency (x=450) -->
-  <rect x="454" y="0" width="446" height="260" class="panel-bg"/>
-  <polyline points="454,14 454,0 468,0" class="corner"/>
-  <polyline points="886,0 900,0 900,14" class="corner"/>
-  <polyline points="454,246 454,260 468,260" class="corner"/>
-  <polyline points="886,260 900,260 900,246" class="corner"/>
-
-  <text x="472" y="20" class="icon">◈</text>
-  <text x="488" y="20" class="hdr">SKILL PROFICIENCY</text>
-  <rect x="820" y="10" width="60" height="14" class="tag-box"/>
-  <text x="850" y="20" text-anchor="middle" class="tag">METRICS</text>
-  <line x1="468" y1="28" x2="886" y2="28" class="divline"/>
-
-  <!-- Skill bars -->
-  <!-- Next.js / React -->
-  <text x="472" y="58" class="skill-name">Next.js / React</text>
-  <text x="852" y="58" class="skill-pct">93%</text>
-  <rect x="472" y="65" width="414" height="5" class="bar-bg"/>
-  <rect x="472" y="65" width="0" height="5" fill="url(#barGrad)" filter="url(#glow2)">
-    <animate attributeName="width" from="0" to="385" dur="1.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  <!-- Skill: Next.js -->
+  <text x="494" y="60"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Next.js / React</text>
+  <text x="856" y="60"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">93</text>
+  <rect x="494" y="66"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
+  <rect x="494" y="66"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
+    <animate attributeName="width" from="0" to="350" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.1s"/>
   </rect>
 
-  <!-- TypeScript -->
-  <text x="472" y="98" class="skill-name">TypeScript</text>
-  <text x="852" y="98" class="skill-pct">90%</text>
-  <rect x="472" y="105" width="414" height="5" class="bar-bg"/>
-  <rect x="472" y="105" width="0" height="5" fill="url(#barGrad)" filter="url(#glow2)">
-    <animate attributeName="width" from="0" to="373" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  <!-- Skill: TypeScript -->
+  <text x="494" y="100"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">TypeScript</text>
+  <text x="856" y="100"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">90</text>
+  <rect x="494" y="106"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
+  <rect x="494" y="106"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
+    <animate attributeName="width" from="0" to="338" dur="1.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.2s"/>
   </rect>
 
-  <!-- Three.js / WebGL -->
-  <text x="472" y="138" class="skill-name">Three.js / WebGL</text>
-  <text x="852" y="138" class="skill-pct">85%</text>
-  <rect x="472" y="145" width="414" height="5" class="bar-bg"/>
-  <rect x="472" y="145" width="0" height="5" fill="url(#barGrad)" filter="url(#glow2)">
-    <animate attributeName="width" from="0" to="352" dur="1.6s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  <!-- Skill: Systems Design -->
+  <text x="494" y="140"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Systems Design</text>
+  <text x="856" y="140"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">88</text>
+  <rect x="494" y="146"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
+  <rect x="494" y="146"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
+    <animate attributeName="width" from="0" to="331" dur="1.45s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.25s"/>
   </rect>
 
-  <!-- Cloud (AWS / GCP) -->
-  <text x="472" y="178" class="skill-name">Cloud (AWS / GCP)</text>
-  <text x="852" y="178" class="skill-pct">82%</text>
-  <rect x="472" y="185" width="414" height="5" class="bar-bg"/>
-  <rect x="472" y="185" width="0" height="5" fill="url(#barGrad)" filter="url(#glow2)">
-    <animate attributeName="width" from="0" to="340" dur="1.7s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  <!-- Skill: Three.js -->
+  <text x="494" y="180"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Three.js / WebGL</text>
+  <text x="856" y="180"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">85</text>
+  <rect x="494" y="186"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
+  <rect x="494" y="186"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
+    <animate attributeName="width" from="0" to="320" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.3s"/>
   </rect>
 
-  <!-- GraphQL / tRPC -->
-  <text x="472" y="218" class="skill-name">GraphQL / tRPC</text>
-  <text x="852" y="218" class="skill-pct">80%</text>
-  <rect x="472" y="225" width="414" height="5" class="bar-bg"/>
-  <rect x="472" y="225" width="0" height="5" fill="url(#barGrad)" filter="url(#glow2)">
-    <animate attributeName="width" from="0" to="331" dur="1.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+  <!-- Skill: Cloud -->
+  <text x="494" y="220"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Cloud / DevOps</text>
+  <text x="856" y="220"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">82</text>
+  <rect x="494" y="226"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
+  <rect x="494" y="226"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
+    <animate attributeName="width" from="0" to="308" dur="1.55s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.35s"/>
   </rect>
 </svg>

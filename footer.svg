@@ -1,38 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="48" viewBox="0 0 900 48">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="44" viewBox="0 0 900 44">
   <defs>
-    <style>
-      .bg { fill: #080f10; }
-      .corner { fill: none; stroke: #00d9c8; stroke-width: 1.5; }
-    </style>
-    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#080f10"/>
-      <stop offset="30%" style="stop-color:#00d9c8"/>
-      <stop offset="70%" style="stop-color:#00d9c8"/>
-      <stop offset="100%" style="stop-color:#080f10"/>
+    <filter id="liq" x="-2%" y="-2%" width="104%" height="104%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" result="b"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.65 0.35" numOctaves="2" seed="2" result="n"/>
+      <feDisplacementMap in="b" in2="n" scale="1.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feComposite in="d" in2="SourceGraphic" operator="atop"/>
+    </filter>
+    <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.02"/>
     </linearGradient>
-    <pattern id="grid4" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.1"/>
-    </pattern>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tealH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
+      <stop offset="30%"  stop-color="#00d9c8" stop-opacity="0.6"/>
+      <stop offset="70%"  stop-color="#00d9c8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
-  <rect width="900" height="48" class="bg"/>
-  <rect width="900" height="48" fill="url(#grid4)"/>
-  <rect x="0" y="0" width="900" height="48" fill="none" stroke="#0d2f2f" stroke-width="1"/>
-  <rect x="0" y="0" width="900" height="2" fill="url(#topGrad)" opacity="0.6"/>
+  <rect width="900" height="44" fill="#020809"/>
+  <rect width="900" height="44" fill="url(#glassL)" filter="url(#liq)"/>
+  <rect x="0" y="0" width="900" height="1" fill="url(#shine)" opacity="0.6"/>
+  <rect x="0" y="0" width="900" height="1" fill="url(#tealH)" opacity="0.4"/>
+  <rect x="0.5" y="0.5" width="899" height="43" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
 
-  <polyline points="0,12 0,0 12,0" class="corner"/>
-  <polyline points="888,0 900,0 900,12" class="corner"/>
-  <polyline points="0,36 0,48 12,48" class="corner"/>
-  <polyline points="888,48 900,48 900,36" class="corner"/>
+  <polyline points="0,12 0,0 12,0"       fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="888,0 900,0 900,12"   fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="0,32 0,44 12,44"      fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+  <polyline points="888,44 900,44 900,32" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
 
-  <circle cx="22" cy="24" r="3" fill="#00d9c8">
-    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  <circle cx="26" cy="22" r="3" fill="#00d9c8">
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <text x="33" y="28" font-family="'Share Tech Mono',monospace" font-size="11" fill="#2a5a5a">github.com/Me-moir</text>
-  <text x="200" y="28" font-family="'Share Tech Mono',monospace" font-size="11" fill="#0d2f2f">·</text>
-  <text x="212" y="28" font-family="'Share Tech Mono',monospace" font-size="11" fill="#2a5a5a">PRO</text>
+  <text x="36" y="26" font-family="Share Tech Mono,monospace" font-size="11" fill="#1e4a48">github.com/Me-moir</text>
 
-  <text x="450" y="28" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="10" fill="#0d2f2f" letter-spacing="3">// OPERATOR PROFILE v2.0 //</text>
+  <text x="450" y="26" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#0d2424" letter-spacing="3">ship in silence.</text>
 
-  <text x="860" y="28" text-anchor="end" font-family="'Share Tech Mono',monospace" font-size="11" fill="#00d9c8">ONLINE</text>
+  <text x="874" y="26" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">ONLINE</text>
 </svg>
