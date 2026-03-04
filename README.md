@@ -13,9 +13,7 @@
 <br/>
 
 <div align="center">
-<img height="155" src="https://github-readme-stats.vercel.app/api?username=Me-moir&show_icons=true&theme=dark&hide_border=true&bg_color=040c0e&title_color=00d9c8&icon_color=00d9c8&text_color=3a7a78&cache_seconds=1800"/>
 <img height="155" src="https://github-readme-streak-stats.herokuapp.com/?user=Me-moir&theme=dark&hide_border=true&background=040c0e&ring=00D9C8&fire=00D9C8&currStreakLabel=00D9C8&sideLabels=3a7a78&dates=1e4a48&stroke=0a1e1e"/>
-<img height="155" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Me-moir&layout=compact&theme=dark&hide_border=true&bg_color=040c0e&title_color=00d9c8&text_color=3a7a78&cache_seconds=1800"/>
 </div>
 
 <br/>
