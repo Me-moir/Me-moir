@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="48" viewBox="0 0 900 48">
+  <defs>
+    <style>
+      .bg { fill: #080f10; }
+      .corner { fill: none; stroke: #00d9c8; stroke-width: 1.5; }
+    </style>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#080f10"/>
+      <stop offset="30%" style="stop-color:#00d9c8"/>
+      <stop offset="70%" style="stop-color:#00d9c8"/>
+      <stop offset="100%" style="stop-color:#080f10"/>
+    </linearGradient>
+    <pattern id="grid4" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="48" class="bg"/>
+  <rect width="900" height="48" fill="url(#grid4)"/>
+  <rect x="0" y="0" width="900" height="48" fill="none" stroke="#0d2f2f" stroke-width="1"/>
+  <rect x="0" y="0" width="900" height="2" fill="url(#topGrad)" opacity="0.6"/>
+
+  <polyline points="0,12 0,0 12,0" class="corner"/>
+  <polyline points="888,0 900,0 900,12" class="corner"/>
+  <polyline points="0,36 0,48 12,48" class="corner"/>
+  <polyline points="888,48 900,48 900,36" class="corner"/>
+
+  <circle cx="22" cy="24" r="3" fill="#00d9c8">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="33" y="28" font-family="'Share Tech Mono',monospace" font-size="11" fill="#2a5a5a">github.com/Me-moir</text>
+  <text x="200" y="28" font-family="'Share Tech Mono',monospace" font-size="11" fill="#0d2f2f">·</text>
+  <text x="212" y="28" font-family="'Share Tech Mono',monospace" font-size="11" fill="#2a5a5a">PRO</text>
+
+  <text x="450" y="28" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="10" fill="#0d2f2f" letter-spacing="3">// OPERATOR PROFILE v2.0 //</text>
+
+  <text x="860" y="28" text-anchor="end" font-family="'Share Tech Mono',monospace" font-size="11" fill="#00d9c8">ONLINE</text>
+</svg>

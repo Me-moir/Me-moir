@@ -1,0 +1,354 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <defs>
+    <style>
+      .bg { fill: #080f10; }
+      .panel-bg { fill: #080f10; stroke: #0d2f2f; stroke-width: 1; }
+      .hdr { font-family: 'Share Tech Mono', monospace; font-size: 10px; fill: #2a5a5a; letter-spacing: 3px; }
+      .tag-box { fill: none; stroke: #0d2f2f; stroke-width: 1; }
+      .tag { font-family: 'Share Tech Mono', monospace; font-size: 9px; fill: #0d2f2f; }
+      .cat { font-family: 'Share Tech Mono', monospace; font-size: 9px; fill: #2a5a5a; letter-spacing: 2px; }
+      .tech { font-family: 'Share Tech Mono', monospace; font-size: 11px; fill: #a8cece; }
+      .tech-box { fill: rgba(0,217,200,0.03); stroke: #0d2f2f; stroke-width: 1; }
+      .dot-t { fill: #00d9c8; }
+      .dot-a { fill: #ffab00; }
+      .dot-c { fill: #00b5a5; }
+      .divline { stroke: #0d2f2f; stroke-width: 1; }
+      .corner { fill: none; stroke: #00d9c8; stroke-width: 1.5; }
+    </style>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="520" class="bg"/>
+  <rect width="900" height="520" fill="url(#grid3)"/>
+  <rect x="0" y="0" width="900" height="520" class="panel-bg"/>
+  <polyline points="0,14 0,0 14,0" class="corner"/>
+  <polyline points="886,0 900,0 900,14" class="corner"/>
+  <polyline points="0,506 0,520 14,520" class="corner"/>
+  <polyline points="886,520 900,520 900,506" class="corner"/>
+
+  <!-- Header -->
+  <text x="18" y="20" font-family="'Share Tech Mono',monospace" font-size="12" fill="#00d9c8">◈</text>
+  <text x="34" y="20" class="hdr">TECH ARSENAL</text>
+  <rect x="818" y="10" width="68" height="14" class="tag-box"/>
+  <text x="852" y="20" text-anchor="middle" class="tag">LOADOUT</text>
+  <line x1="14" y1="28" x2="886" y2="28" class="divline"/>
+
+  <!-- ── COL 1 (x=18) ── -->
+
+  <!-- CORE FRAMEWORK -->
+  <text x="18" y="52" class="cat">CORE FRAMEWORK</text>
+  <line x1="18" y1="56" x2="285" y2="56" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="18" y="62" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="72" r="3" class="dot-t"/>
+  <text x="38" y="76" class="tech">Next.js</text>
+
+  <rect x="146" y="62" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="72" r="3" class="dot-t"/>
+  <text x="166" y="76" class="tech">React</text>
+
+  <rect x="18" y="88" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="98" r="3" class="dot-t"/>
+  <text x="38" y="102" class="tech">TypeScript</text>
+
+  <!-- STYLING / UI -->
+  <text x="18" y="130" class="cat">STYLING / UI</text>
+  <line x1="18" y1="134" x2="285" y2="134" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="18" y="140" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="150" r="3" class="dot-t"/>
+  <text x="38" y="154" class="tech">Tailwind CSS</text>
+
+  <rect x="146" y="140" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="150" r="3" class="dot-t"/>
+  <text x="166" y="154" class="tech">shadcn/ui</text>
+
+  <rect x="18" y="166" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="176" r="3" class="dot-t"/>
+  <text x="38" y="180" class="tech">Radix UI</text>
+
+  <rect x="146" y="166" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="176" r="3" class="dot-t"/>
+  <text x="166" y="180" class="tech">Framer Motion</text>
+
+  <rect x="18" y="192" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="202" r="3" class="dot-t"/>
+  <text x="38" y="206" class="tech">Lucide Icons</text>
+
+  <!-- 3D / VISUALIZATION -->
+  <text x="18" y="234" class="cat">3D / VISUALIZATION</text>
+  <line x1="18" y1="238" x2="285" y2="238" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="18" y="244" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="254" r="3" class="dot-a"/>
+  <text x="38" y="258" class="tech">Three.js</text>
+
+  <rect x="146" y="244" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="254" r="3" class="dot-a"/>
+  <text x="166" y="258" class="tech">React Three Fiber</text>
+
+  <rect x="18" y="270" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="280" r="3" class="dot-a"/>
+  <text x="38" y="284" class="tech">Drei</text>
+
+  <rect x="146" y="270" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="280" r="3" class="dot-a"/>
+  <text x="166" y="284" class="tech">WebGL</text>
+
+  <rect x="18" y="296" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="306" r="3" class="dot-a"/>
+  <text x="38" y="310" class="tech">GLSL</text>
+
+  <!-- STATE MANAGEMENT -->
+  <text x="18" y="338" class="cat">STATE MANAGEMENT</text>
+  <line x1="18" y1="342" x2="285" y2="342" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="18" y="348" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="358" r="3" class="dot-t"/>
+  <text x="38" y="362" class="tech">Zustand</text>
+
+  <rect x="146" y="348" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="358" r="3" class="dot-t"/>
+  <text x="166" y="362" class="tech">Redux Toolkit</text>
+
+  <!-- DATA / APIs -->
+  <text x="18" y="394" class="cat">DATA / APIs</text>
+  <line x1="18" y1="398" x2="285" y2="398" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="18" y="404" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="414" r="3" class="dot-c"/>
+  <text x="38" y="418" class="tech">REST API</text>
+
+  <rect x="146" y="404" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="414" r="3" class="dot-c"/>
+  <text x="166" y="418" class="tech">GraphQL</text>
+
+  <rect x="18" y="430" width="120" height="20" class="tech-box"/>
+  <circle cx="30" cy="440" r="3" class="dot-c"/>
+  <text x="38" y="444" class="tech">tRPC</text>
+
+  <rect x="146" y="430" width="120" height="20" class="tech-box"/>
+  <circle cx="158" cy="440" r="3" class="dot-c"/>
+  <text x="166" y="444" class="tech">OpenAPI/Swagger</text>
+
+  <!-- ── COLUMN DIVIDER ── -->
+  <line x1="305" y1="34" x2="305" y2="506" stroke="#0d2f2f" stroke-width="1"/>
+
+  <!-- ── COL 2 (x=315) ── -->
+
+  <!-- BACKEND -->
+  <text x="318" y="52" class="cat">BACKEND</text>
+  <line x1="318" y1="56" x2="585" y2="56" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="318" y="62" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="72" r="3" class="dot-t"/>
+  <text x="338" y="76" class="tech">Node.js</text>
+
+  <rect x="446" y="62" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="72" r="3" class="dot-t"/>
+  <text x="466" y="76" class="tech">Express</text>
+
+  <rect x="318" y="88" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="98" r="3" class="dot-t"/>
+  <text x="338" y="102" class="tech">NestJS</text>
+
+  <rect x="446" y="88" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="98" r="3" class="dot-t"/>
+  <text x="466" y="102" class="tech">Socket.io</text>
+
+  <!-- AUTHENTICATION -->
+  <text x="318" y="130" class="cat">AUTHENTICATION</text>
+  <line x1="318" y1="134" x2="585" y2="134" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="318" y="140" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="150" r="3" class="dot-t"/>
+  <text x="338" y="154" class="tech">NextAuth.js</text>
+
+  <rect x="446" y="140" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="150" r="3" class="dot-t"/>
+  <text x="466" y="154" class="tech">Clerk</text>
+
+  <rect x="318" y="166" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="176" r="3" class="dot-t"/>
+  <text x="338" y="180" class="tech">Auth0</text>
+
+  <rect x="446" y="166" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="176" r="3" class="dot-t"/>
+  <text x="466" y="180" class="tech">JWT</text>
+
+  <!-- DATABASE -->
+  <text x="318" y="208" class="cat">DATABASE</text>
+  <line x1="318" y1="212" x2="585" y2="212" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="318" y="218" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="228" r="3" class="dot-c"/>
+  <text x="338" y="232" class="tech">PostgreSQL</text>
+
+  <rect x="446" y="218" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="228" r="3" class="dot-c"/>
+  <text x="466" y="232" class="tech">MySQL</text>
+
+  <rect x="318" y="244" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="254" r="3" class="dot-c"/>
+  <text x="338" y="258" class="tech">MongoDB</text>
+
+  <rect x="446" y="244" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="254" r="3" class="dot-c"/>
+  <text x="466" y="258" class="tech">Firebase</text>
+
+  <!-- ORM -->
+  <text x="318" y="286" class="cat">ORM</text>
+  <line x1="318" y1="290" x2="585" y2="290" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="318" y="296" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="306" r="3" class="dot-c"/>
+  <text x="338" y="310" class="tech">Prisma</text>
+
+  <rect x="446" y="296" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="306" r="3" class="dot-c"/>
+  <text x="466" y="310" class="tech">Drizzle ORM</text>
+
+  <rect x="318" y="322" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="332" r="3" class="dot-c"/>
+  <text x="338" y="336" class="tech">TypeORM</text>
+
+  <!-- TESTING -->
+  <text x="318" y="364" class="cat">TESTING</text>
+  <line x1="318" y1="368" x2="585" y2="368" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="318" y="374" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="384" r="3" class="dot-t"/>
+  <text x="338" y="388" class="tech">Jest</text>
+
+  <rect x="446" y="374" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="384" r="3" class="dot-t"/>
+  <text x="466" y="388" class="tech">Vitest</text>
+
+  <rect x="318" y="400" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="410" r="3" class="dot-t"/>
+  <text x="338" y="414" class="tech">Testing Library</text>
+
+  <rect x="446" y="400" width="120" height="20" class="tech-box"/>
+  <circle cx="458" cy="410" r="3" class="dot-t"/>
+  <text x="466" y="414" class="tech">Cypress</text>
+
+  <rect x="318" y="426" width="120" height="20" class="tech-box"/>
+  <circle cx="330" cy="436" r="3" class="dot-t"/>
+  <text x="338" y="440" class="tech">Playwright</text>
+
+  <!-- ── COLUMN DIVIDER ── -->
+  <line x1="605" y1="34" x2="605" y2="506" stroke="#0d2f2f" stroke-width="1"/>
+
+  <!-- ── COL 3 (x=618) ── -->
+
+  <!-- CLOUD / DEPLOYMENT -->
+  <text x="618" y="52" class="cat">CLOUD / DEPLOYMENT</text>
+  <line x1="618" y1="56" x2="886" y2="56" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="618" y="62" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="72" r="3" class="dot-a"/>
+  <text x="638" y="76" class="tech">Vercel</text>
+
+  <rect x="746" y="62" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="72" r="3" class="dot-a"/>
+  <text x="766" y="76" class="tech">AWS</text>
+
+  <rect x="618" y="88" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="98" r="3" class="dot-a"/>
+  <text x="638" y="102" class="tech">Google Cloud</text>
+
+  <rect x="746" y="88" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="98" r="3" class="dot-a"/>
+  <text x="766" y="102" class="tech">Azure</text>
+
+  <!-- CONTAINERS -->
+  <text x="618" y="130" class="cat">CONTAINERS</text>
+  <line x1="618" y1="134" x2="886" y2="134" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="618" y="140" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="150" r="3" class="dot-a"/>
+  <text x="638" y="154" class="tech">Docker</text>
+
+  <rect x="746" y="140" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="150" r="3" class="dot-a"/>
+  <text x="766" y="154" class="tech">Kubernetes</text>
+
+  <rect x="618" y="166" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="176" r="3" class="dot-a"/>
+  <text x="638" y="180" class="tech">Cloudflare CDN</text>
+
+  <!-- SECURITY -->
+  <text x="618" y="208" class="cat">SECURITY</text>
+  <line x1="618" y1="212" x2="886" y2="212" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="618" y="218" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="228" r="3" class="dot-t"/>
+  <text x="638" y="232" class="tech">OAuth2</text>
+
+  <rect x="746" y="218" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="228" r="3" class="dot-t"/>
+  <text x="766" y="232" class="tech">CSRF / CORS</text>
+
+  <rect x="618" y="244" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="254" r="3" class="dot-t"/>
+  <text x="638" y="258" class="tech">Helmet.js</text>
+
+  <rect x="746" y="244" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="254" r="3" class="dot-t"/>
+  <text x="766" y="258" class="tech">RBAC</text>
+
+  <!-- MONITORING -->
+  <text x="618" y="286" class="cat">MONITORING</text>
+  <line x1="618" y1="290" x2="886" y2="290" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="618" y="296" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="306" r="3" class="dot-c"/>
+  <text x="638" y="310" class="tech">Sentry</text>
+
+  <rect x="746" y="296" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="306" r="3" class="dot-c"/>
+  <text x="766" y="310" class="tech">Datadog</text>
+
+  <rect x="618" y="322" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="332" r="3" class="dot-c"/>
+  <text x="638" y="336" class="tech">Prometheus</text>
+
+  <rect x="746" y="322" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="332" r="3" class="dot-c"/>
+  <text x="766" y="336" class="tech">Grafana</text>
+
+  <!-- DEV TOOLS -->
+  <text x="618" y="364" class="cat">DEV TOOLS</text>
+  <line x1="618" y1="368" x2="886" y2="368" stroke="#0d2f2f" stroke-width="1"/>
+
+  <rect x="618" y="374" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="384" r="3" class="dot-t"/>
+  <text x="638" y="388" class="tech">Git / GitHub</text>
+
+  <rect x="746" y="374" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="384" r="3" class="dot-t"/>
+  <text x="766" y="388" class="tech">ESLint / Prettier</text>
+
+  <rect x="618" y="400" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="410" r="3" class="dot-t"/>
+  <text x="638" y="414" class="tech">TurboRepo</text>
+
+  <rect x="746" y="400" width="120" height="20" class="tech-box"/>
+  <circle cx="758" cy="410" r="3" class="dot-t"/>
+  <text x="766" y="414" class="tech">pnpm</text>
+
+  <rect x="618" y="426" width="120" height="20" class="tech-box"/>
+  <circle cx="630" cy="436" r="3" class="dot-t"/>
+  <text x="638" y="440" class="tech">Husky</text>
+
+  <!-- Legend -->
+  <line x1="14" y1="476" x2="886" y2="476" stroke="#0d2f2f" stroke-width="1"/>
+  <circle cx="25" cy="492" r="3" class="dot-t"/>
+  <text x="33" y="496" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">FRONTEND / STACK</text>
+  <circle cx="185" cy="492" r="3" class="dot-a"/>
+  <text x="193" y="496" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">CLOUD / INFRA</text>
+  <circle cx="335" cy="492" r="3" class="dot-c"/>
+  <text x="343" y="496" font-family="'Share Tech Mono',monospace" font-size="10" fill="#2a5a5a">DATA / DB / ORM</text>
+</svg>
