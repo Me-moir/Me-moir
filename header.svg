@@ -1,193 +1,108 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+<defs>
+  <style>
+    .mono { font-family: "Courier New", monospace; }
+    .orbitron { font-family: "Courier New", monospace; font-weight: 900; }
+  </style>
+  <linearGradient id="hbg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#060d2e"/>
+    <stop offset="100%" stop-color="#02050f"/>
+  </linearGradient>
+  <linearGradient id="haccent" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1a6eee" stop-opacity="0.18"/>
+    <stop offset="60%" stop-color="#e0eeff" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#1a6eee" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="nameglow" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#4a9fff"/>
+    <stop offset="100%" stop-color="#1a6eee"/>
+  </linearGradient>
+  <filter id="textglow">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softglow">
+    <feGaussianBlur stdDeviation="8" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
 
-    <!-- GLASS FILTERS -->
-    <!-- Liquid distortion on the panel surface -->
-    <filter id="liquidGlass" x="-2%" y="-2%" width="104%" height="104%">
-      <!-- Frosted blur -->
-      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blurred"/>
-      <!-- Turbulence for liquid texture -->
-      <feTurbulence type="fractalNoise" baseFrequency="0.65 0.35" numOctaves="3" seed="7" result="noise"/>
-      <!-- Subtle displacement — liquid refraction -->
-      <feDisplacementMap in="blurred" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
-      <feComposite in="displaced" in2="SourceGraphic" operator="atop"/>
-    </filter>
+<!-- bg -->
+<rect width="900" height="220" fill="url(#hbg)" rx="2"/>
+<rect width="900" height="220" fill="url(#haccent)"/>
 
-    <!-- Soft inner glow filter -->
-    <filter id="titleGlow" x="-5%" y="-30%" width="110%" height="160%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+<!-- grid lines -->
+<line x1="0" y1="60" x2="900" y2="60" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.4"/>
+<line x1="0" y1="120" x2="900" y2="120" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.3"/>
+<line x1="0" y1="180" x2="900" y2="180" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.3"/>
+<line x1="180" y1="0" x2="180" y2="220" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.25"/>
+<line x1="450" y1="0" x2="450" y2="220" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.25"/>
+<line x1="720" y1="0" x2="720" y2="220" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.25"/>
 
-    <!-- Edge frost blur for glass border -->
-    <filter id="frostEdge" x="-1%" y="-1%" width="102%" height="102%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2"/>
-    </filter>
+<!-- border -->
+<rect width="900" height="220" fill="none" stroke="#6a8abf" stroke-width="1" rx="2"/>
 
-    <!-- GRADIENTS -->
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="900" y2="210" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="#040c0e"/>
-      <stop offset="100%" stop-color="#020809"/>
-    </linearGradient>
+<!-- corner brackets -->
+<line x1="0" y1="0" x2="18" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="0" x2="0" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="882" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="900" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="220" x2="18" y2="220" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="220" x2="0" y2="202" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="220" x2="882" y2="220" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="220" x2="900" y2="202" stroke="#1a6eee" stroke-width="1.5"/>
 
-    <!-- Glass panel background — very subtle teal tint -->
-    <linearGradient id="glassBg" x1="0" y1="0" x2="0" y2="210" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.06"/>
-      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.03"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.05"/>
-    </linearGradient>
+<!-- top glass catchlight -->
+<line x1="80" y1="1" x2="820" y2="1" stroke="rgba(100,160,255,0.4)" stroke-width="0.5"/>
 
-    <!-- Top edge shine — the "glass catching light" effect -->
-    <linearGradient id="topShine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
-      <stop offset="20%"  stop-color="#00d9c8" stop-opacity="0.0"/>
-      <stop offset="38%"  stop-color="#c8fffc" stop-opacity="0.6"/>
-      <stop offset="50%"  stop-color="#ffffff"  stop-opacity="0.9"/>
-      <stop offset="62%"  stop-color="#c8fffc" stop-opacity="0.6"/>
-      <stop offset="80%"  stop-color="#00d9c8" stop-opacity="0.0"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
-    </linearGradient>
+<!-- section label -->
+<text x="48" y="48" font-family="'Courier New',monospace" font-size="9" fill="#6a8abf" letter-spacing="3">OPERATOR // PROFILE</text>
 
-    <!-- Shimmer sweep gradient -->
-    <linearGradient id="shimmer" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="transparent"/>
-      <stop offset="45%"  stop-color="transparent"/>
-      <stop offset="50%"  stop-color="rgba(200,255,252,0.06)"/>
-      <stop offset="55%"  stop-color="transparent"/>
-      <stop offset="100%" stop-color="transparent"/>
-    </linearGradient>
+<!-- name -->
+<text x="48" y="130" font-family="'Courier New',monospace" font-size="52" font-weight="900" letter-spacing="6" fill="url(#nameglow)" filter="url(#textglow)">MEMOIR</text>
 
-    <!-- Bottom fade -->
-    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.1"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
-    </linearGradient>
+<!-- handle -->
+<text x="50" y="155" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf" letter-spacing="4">@ME-MOIR</text>
 
-    <!-- Stat divider -->
-    <linearGradient id="divV" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
-    </linearGradient>
+<!-- divider -->
+<line x1="48" y1="168" x2="520" y2="168" stroke="#6a8abf" stroke-width="0.8"/>
 
-    <!-- Teal fade horizontal -->
-    <linearGradient id="tealH" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#00d9c8" stop-opacity="0.8"/>
-      <stop offset="70%"  stop-color="#00d9c8" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
-    </linearGradient>
+<!-- focus items -->
+<text x="48" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Systems Architecture</text>
+<text x="228" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
+<text x="242" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Defense Tech</text>
+<text x="362" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
+<text x="376" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Full-Stack</text>
+<text x="464" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
+<text x="478" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">3D / WebGL</text>
+<text x="574" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
+<text x="588" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Data &amp; APIs</text>
 
-    <!-- Grid pattern -->
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d9c8" stroke-width="0.4" opacity="0.07"/>
-    </pattern>
+<!-- prompt -->
+<text x="48" y="208" font-family="'Courier New',monospace" font-size="11" fill="#1a6eee">$</text>
+<text x="62" y="208" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">ship in silence.</text>
+<rect x="198" y="197" width="7" height="13" fill="#1a6eee" opacity="0.8">
+  <animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite"/>
+</rect>
 
-  </defs>
+<!-- stats top right -->
+<text x="852" y="80" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1a6eee" text-anchor="middle">04</text>
+<text x="852" y="93" font-family="'Courier New',monospace" font-size="8" fill="#6a8abf" text-anchor="middle" letter-spacing="2">REPOS</text>
+<text x="852" y="125" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1a6eee" text-anchor="middle">01</text>
+<text x="852" y="138" font-family="'Courier New',monospace" font-size="8" fill="#6a8abf" text-anchor="middle" letter-spacing="2">STARS</text>
+<text x="852" y="170" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1a6eee" text-anchor="middle">02</text>
+<text x="852" y="183" font-family="'Courier New',monospace" font-size="8" fill="#6a8abf" text-anchor="middle" letter-spacing="2">FOLLOWERS</text>
 
-  <!-- BG + Grid -->
-  <rect width="900" height="210" fill="url(#bgGrad)"/>
-  <rect width="900" height="210" fill="url(#grid)"/>
+<!-- vertical divider before stats -->
+<line x1="810" y1="56" x2="810" y2="200" stroke="#6a8abf" stroke-width="0.8"/>
 
-  <!-- Background ambient glow orbs -->
-  <ellipse cx="120" cy="60"  rx="200" ry="120" fill="#00d9c8" opacity="0.025" filter="url(#frostEdge)">
-    <animate attributeName="rx" values="200;220;200" dur="8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.025;0.04;0.025" dur="8s" repeatCount="indefinite"/>
-  </ellipse>
-  <ellipse cx="780" cy="160" rx="180" ry="100" fill="#00b5a5" opacity="0.02" filter="url(#frostEdge)">
-    <animate attributeName="rx" values="180;160;180" dur="10s" repeatCount="indefinite"/>
-  </ellipse>
-
-  <!-- ═══ GLASS PANEL ═══ -->
-
-  <!-- Panel base — frosted glass bg -->
-  <rect x="0" y="0" width="900" height="210" fill="url(#glassBg)" filter="url(#liquidGlass)"/>
-
-  <!-- Glass surface sheen — slight gradient from top -->
-  <rect x="0" y="0" width="900" height="80" fill="url(#bottomFade)" opacity="0.4"/>
-
-  <!-- Top edge highlight — the key liquid glass effect: bright catch-light along top edge -->
-  <rect x="0" y="0" width="900" height="1" fill="url(#topShine)"/>
-
-  <!-- Animated shimmer sweep across panel -->
-  <rect x="-900" y="0" width="900" height="210" fill="url(#shimmer)" opacity="0.8">
-    <animateTransform attributeName="transform" type="translate"
-      from="-900 0" to="1800 0" dur="6s" repeatCount="indefinite" calcMode="spline"
-      keySplines="0.4 0 0.6 1"/>
-  </rect>
-
-  <!-- Outer glass border — subtle -->
-  <rect x="0.5" y="0.5" width="899" height="209" fill="none"
-        stroke="#00d9c8" stroke-width="1" stroke-opacity="0.12"/>
-
-  <!-- Corner brackets — crisp teal -->
-  <polyline points="0,16 0,0 16,0"     fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
-  <polyline points="884,0 900,0 900,16" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
-  <polyline points="0,194 0,210 16,210" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
-  <polyline points="884,210 900,210 900,194" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.8"/>
-
-  <!-- ── CONTENT ── -->
-
-  <!-- Status indicator -->
-  <circle cx="845" cy="22" r="3.5" fill="#00d9c8">
-    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="r" values="3.5;4.5;3.5" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="845" cy="22" r="7" fill="none" stroke="#00d9c8" stroke-width="0.8" opacity="0.2">
-    <animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <text x="856" y="26" font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" letter-spacing="1" opacity="0.6">ONLINE</text>
-
-  <!-- TITLE -->
-  <text x="48" y="100"
-        font-family="Orbitron,Share Tech Mono,monospace"
-        font-size="50" font-weight="900" letter-spacing="5"
-        fill="#00d9c8" filter="url(#titleGlow)" opacity="0.95">JANSSEN JEKK</text>
-
-  <!-- Subtle title echo / reflection below — glass depth illusion -->
-  <text x="48" y="108"
-        font-family="Orbitron,Share Tech Mono,monospace"
-        font-size="50" font-weight="900" letter-spacing="5"
-        fill="#00d9c8" opacity="0.04"
-        transform="scale(1,-1) translate(0,-216)">JANSSEN JEKK</text>
-
-  <!-- Handle -->
-  <text x="52" y="122"
-        font-family="Share Tech Mono,monospace"
-        font-size="11" letter-spacing="5" fill="#00d9c8" opacity="0.2">@ME-MOIR</text>
-
-  <!-- Thin divider -->
-  <rect x="48" y="136" width="380" height="1" fill="#00d9c8" opacity="0.08"/>
-
-  <!-- Focus areas -->
-  <text x="50" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Systems Architecture</text>
-  <text x="248" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
-  <text x="260" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Defense Tech</text>
-  <text x="362" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
-  <text x="374" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Full-Stack</text>
-  <text x="456" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
-  <text x="468" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">3D / WebGL</text>
-  <text x="568" y="157" font-family="Share Tech Mono,monospace" font-size="10" fill="#1a3a38">·</text>
-  <text x="580" y="157" font-family="Share Tech Mono,monospace" font-size="11" letter-spacing="2" fill="#3a7a78">Data &amp; APIs</text>
-
-  <!-- Prompt line -->
-  <text x="50" y="188" font-family="Share Tech Mono,monospace" font-size="12" fill="#00d9c8" opacity="0.25">$</text>
-  <text x="64" y="188" font-family="Share Tech Mono,monospace" font-size="12" fill="#2a6a68">ship in silence.</text>
-  <rect x="204" y="176" width="6" height="14" fill="#00d9c8" opacity="0.5">
-    <animate attributeName="opacity" values="0.5;0;0.5" dur="1s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- RIGHT: Stats — vertical dividers with glass feel -->
-  <rect x="724" y="72" width="1" height="80" fill="url(#divV)"/>
-  <rect x="812" y="72" width="1" height="80" fill="url(#divV)"/>
-
-  <text x="744" y="102" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="2">REPOS</text>
-  <text x="742" y="126" font-family="Orbitron,monospace" font-size="26" font-weight="700" fill="#00d9c8" opacity="0.9" filter="url(#titleGlow)">04</text>
-
-  <text x="832" y="102" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="2">STARS</text>
-  <text x="830" y="126" font-family="Orbitron,monospace" font-size="26" font-weight="700" fill="#00d9c8" opacity="0.9" filter="url(#titleGlow)">01</text>
-
-  <!-- Bottom accent line -->
-  <rect x="0" y="209" width="900" height="1" fill="url(#tealH)" opacity="0.4"/>
+<!-- online dot -->
+<circle cx="862" cy="36" r="4" fill="#1a6eee">
+  <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+</circle>
+<circle cx="862" cy="36" r="9" fill="#1a6eee" fill-opacity="0">
+  <animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>
+  <animate attributeName="fill-opacity" values="0.12;0;0.12" dur="2s" repeatCount="indefinite"/>
+</circle>
+<text x="874" y="40" font-family="'Courier New',monospace" font-size="9" fill="#e0eeff" letter-spacing="1">ONLINE</text>
 </svg>

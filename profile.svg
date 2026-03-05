@@ -1,137 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240">
-  <defs>
-    <filter id="liq" x="-2%" y="-2%" width="104%" height="104%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="b"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.6 0.3" numOctaves="3" seed="12" result="n"/>
-      <feDisplacementMap in="b" in2="n" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feComposite in="d" in2="SourceGraphic" operator="atop"/>
-    </filter>
-    <filter id="barGlow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="240" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#040c0e"/>
-      <stop offset="100%" stop-color="#020809"/>
-    </linearGradient>
-    <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.02"/>
-    </linearGradient>
-    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="barFill" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#004a44"/>
-      <stop offset="100%" stop-color="#00d9c8"/>
-    </linearGradient>
-    <linearGradient id="divV" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#00d9c8" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
-    </linearGradient>
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#00d9c8" stroke-width="0.3" opacity="0.05"/>
-    </pattern>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
+<defs>
+  <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#060d2e"/>
+    <stop offset="100%" stop-color="#02050f"/>
+  </linearGradient>
+  <linearGradient id="skillbar" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6a8abf"/>
+    <stop offset="100%" stop-color="#1a6eee"/>
+  </linearGradient>
+  <filter id="barglow">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
 
-  <rect width="900" height="240" fill="url(#bgG)"/>
-  <rect width="900" height="240" fill="url(#grid)"/>
+<rect width="900" height="280" fill="url(#pbg)" rx="2"/>
+<rect width="900" height="280" fill="none" stroke="#6a8abf" stroke-width="1" rx="2"/>
 
-  <!-- ─── LEFT PANEL: Profile ─── -->
-  <rect x="0" y="0" width="436" height="240" fill="url(#glassL)" filter="url(#liq)"/>
-  <rect x="0" y="0" width="436" height="1"   fill="url(#shine)" opacity="0.5"/>
-  <rect x="0.5" y="0.5" width="435" height="239" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
-  <polyline points="0,14 0,0 14,0"     fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="422,0 436,0 436,14" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="0,226 0,240 14,240" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="422,240 436,240 436,226" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+<!-- vertical divider -->
+<line x1="450" y1="20" x2="450" y2="260" stroke="#6a8abf" stroke-width="1"/>
 
-  <text x="30" y="28" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="3">OPERATOR</text>
-  <rect x="30" y="34" width="376" height="1" fill="#00d9c8" opacity="0.05"/>
+<!-- corner brackets -->
+<line x1="0" y1="0" x2="18" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="0" x2="0" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="882" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="900" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="280" x2="18" y2="280" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="280" x2="0" y2="262" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="280" x2="882" y2="280" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="280" x2="900" y2="262" stroke="#1a6eee" stroke-width="1.5"/>
 
-  <!-- Profile rows -->
-  <text x="30" y="58"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">handle</text>
-  <text x="130" y="58" font-family="Share Tech Mono,monospace" font-size="11" fill="#00d9c8" opacity="0.8">Me-moir</text>
-  <rect x="30" y="64" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
+<!-- glass catchlight -->
+<line x1="80" y1="1" x2="820" y2="1" stroke="rgba(100,160,255,0.35)" stroke-width="0.5"/>
 
-  <text x="30" y="84"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">name</text>
-  <text x="130" y="84" font-family="Share Tech Mono,monospace" font-size="11" fill="#5a9a98">Janssen Jekk</text>
-  <rect x="30" y="90" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
+<!-- ── LEFT: OPERATOR ── -->
+<text x="32" y="36" font-family="'Courier New',monospace" font-size="9" fill="#6a8abf" letter-spacing="3">OPERATOR</text>
 
-  <text x="30" y="110"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">class</text>
-  <text x="130" y="110" font-family="Share Tech Mono,monospace" font-size="11" fill="#5a9a98">Full-Stack · 3D · Cloud</text>
-  <rect x="30" y="116" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
+<!-- rows -->
+<line x1="32" y1="48" x2="418" y2="48" stroke="#6a8abf" stroke-width="0.5"/>
+<text x="32" y="68" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">handle</text>
+<text x="200" y="68" font-family="'Courier New',monospace" font-size="11" fill="#1a6eee">Me-moir</text>
+<line x1="32" y1="76" x2="418" y2="76" stroke="#6a8abf" stroke-width="0.5" stroke-opacity="0.5"/>
 
-  <text x="30" y="136"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">stack</text>
-  <text x="130" y="136" font-family="Share Tech Mono,monospace" font-size="11" fill="#3a7a78">Next.js · React · TS</text>
-  <rect x="30" y="142" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
+<text x="32" y="96" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">name</text>
+<text x="200" y="96" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Janssen Jekk</text>
+<line x1="32" y1="104" x2="418" y2="104" stroke="#6a8abf" stroke-width="0.5" stroke-opacity="0.5"/>
 
-  <text x="30" y="162"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">cloud</text>
-  <text x="130" y="162" font-family="Share Tech Mono,monospace" font-size="11" fill="#3a7a78">AWS · GCP · Vercel</text>
-  <rect x="30" y="168" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
+<text x="32" y="124" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">class</text>
+<text x="200" y="124" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Full-Stack · 3D · Cloud</text>
+<line x1="32" y1="132" x2="418" y2="132" stroke="#6a8abf" stroke-width="0.5" stroke-opacity="0.5"/>
 
-  <text x="30" y="188"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">db</text>
-  <text x="130" y="188" font-family="Share Tech Mono,monospace" font-size="11" fill="#3a7a78">PostgreSQL · Prisma</text>
-  <rect x="30" y="194" width="376" height="1" fill="#00d9c8" opacity="0.04"/>
+<text x="32" y="152" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">stack</text>
+<text x="200" y="152" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Next.js · React · TS</text>
+<line x1="32" y1="160" x2="418" y2="160" stroke="#6a8abf" stroke-width="0.5" stroke-opacity="0.5"/>
 
-  <text x="30" y="214"  font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">mode</text>
-  <text x="130" y="214" font-family="Share Tech Mono,monospace" font-size="11" fill="#00d9c8" opacity="0.6">lowkey</text>
+<text x="32" y="180" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">cloud</text>
+<text x="200" y="180" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">AWS · GCP · Vercel</text>
+<line x1="32" y1="188" x2="418" y2="188" stroke="#6a8abf" stroke-width="0.5" stroke-opacity="0.5"/>
 
-  <!-- Vertical divider gap -->
-  <rect x="448" y="20" width="1" height="200" fill="url(#divV)"/>
+<text x="32" y="208" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">db</text>
+<text x="200" y="208" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">PostgreSQL · Prisma</text>
+<line x1="32" y1="216" x2="418" y2="216" stroke="#6a8abf" stroke-width="0.5" stroke-opacity="0.5"/>
 
-  <!-- ─── RIGHT PANEL: Skills ─── -->
-  <rect x="464" y="0" width="436" height="240" fill="url(#glassL)" filter="url(#liq)"/>
-  <rect x="464" y="0" width="436" height="1"   fill="url(#shine)" opacity="0.5"/>
-  <rect x="464.5" y="0.5" width="435" height="239" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
-  <polyline points="464,14 464,0 478,0"     fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="886,0 900,0 900,14"      fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="464,226 464,240 478,240" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="886,240 900,240 900,226" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+<text x="32" y="236" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf">mode</text>
+<text x="200" y="236" font-family="'Courier New',monospace" font-size="11" fill="#1a6eee">lowkey</text>
 
-  <text x="494" y="28" font-family="Share Tech Mono,monospace" font-size="9" fill="#1e4a48" letter-spacing="3">PROFICIENCY</text>
-  <rect x="494" y="34" width="376" height="1" fill="#00d9c8" opacity="0.05"/>
+<!-- ── RIGHT: PROFICIENCY ── -->
+<text x="476" y="36" font-family="'Courier New',monospace" font-size="9" fill="#6a8abf" letter-spacing="3">PROFICIENCY</text>
+<line x1="476" y1="48" x2="868" y2="48" stroke="#6a8abf" stroke-width="0.5"/>
 
-  <!-- Skill: Next.js -->
-  <text x="494" y="60"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Next.js / React</text>
-  <text x="856" y="60"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">93</text>
-  <rect x="494" y="66"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
-  <rect x="494" y="66"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
-    <animate attributeName="width" from="0" to="350" dur="1.3s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.1s"/>
-  </rect>
+<!-- skill 1: Next.js / React 93% -->
+<text x="476" y="78" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Next.js / React</text>
+<text x="860" y="78" font-family="'Courier New',monospace" font-size="9" fill="#1a6eee" text-anchor="end">93</text>
+<rect x="476" y="84" width="384" height="2" rx="1" fill="#6a8abf"/>
+<rect x="476" y="84" width="357" height="2" rx="1" fill="url(#skillbar)" filter="url(#barglow)"/>
+<circle cx="833" cy="85" r="3.5" fill="#1a6eee" filter="url(#barglow)"/>
 
-  <!-- Skill: TypeScript -->
-  <text x="494" y="100"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">TypeScript</text>
-  <text x="856" y="100"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">90</text>
-  <rect x="494" y="106"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
-  <rect x="494" y="106"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
-    <animate attributeName="width" from="0" to="338" dur="1.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.2s"/>
-  </rect>
+<!-- skill 2: TypeScript 90% -->
+<text x="476" y="112" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">TypeScript</text>
+<text x="860" y="112" font-family="'Courier New',monospace" font-size="9" fill="#1a6eee" text-anchor="end">90</text>
+<rect x="476" y="118" width="384" height="2" rx="1" fill="#6a8abf"/>
+<rect x="476" y="118" width="346" height="2" rx="1" fill="url(#skillbar)" filter="url(#barglow)"/>
+<circle cx="822" cy="119" r="3.5" fill="#1a6eee" filter="url(#barglow)"/>
 
-  <!-- Skill: Systems Design -->
-  <text x="494" y="140"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Systems Design</text>
-  <text x="856" y="140"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">88</text>
-  <rect x="494" y="146"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
-  <rect x="494" y="146"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
-    <animate attributeName="width" from="0" to="331" dur="1.45s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.25s"/>
-  </rect>
+<!-- skill 3: Systems Design 88% -->
+<text x="476" y="146" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Systems Design</text>
+<text x="860" y="146" font-family="'Courier New',monospace" font-size="9" fill="#1a6eee" text-anchor="end">88</text>
+<rect x="476" y="152" width="384" height="2" rx="1" fill="#6a8abf"/>
+<rect x="476" y="152" width="338" height="2" rx="1" fill="url(#skillbar)" filter="url(#barglow)"/>
+<circle cx="814" cy="153" r="3.5" fill="#1a6eee" filter="url(#barglow)"/>
 
-  <!-- Skill: Three.js -->
-  <text x="494" y="180"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Three.js / WebGL</text>
-  <text x="856" y="180"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">85</text>
-  <rect x="494" y="186"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
-  <rect x="494" y="186"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
-    <animate attributeName="width" from="0" to="320" dur="1.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.3s"/>
-  </rect>
+<!-- skill 4: Three.js / WebGL 85% -->
+<text x="476" y="180" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Three.js / WebGL</text>
+<text x="860" y="180" font-family="'Courier New',monospace" font-size="9" fill="#1a6eee" text-anchor="end">85</text>
+<rect x="476" y="186" width="384" height="2" rx="1" fill="#6a8abf"/>
+<rect x="476" y="186" width="326" height="2" rx="1" fill="url(#skillbar)" filter="url(#barglow)"/>
+<circle cx="802" cy="187" r="3.5" fill="#1a6eee" filter="url(#barglow)"/>
 
-  <!-- Skill: Cloud -->
-  <text x="494" y="220"  font-family="Share Tech Mono,monospace" font-size="11" fill="#4a8a88">Cloud / DevOps</text>
-  <text x="856" y="220"  font-family="Share Tech Mono,monospace" font-size="10" fill="#00d9c8" text-anchor="end" opacity="0.7">82</text>
-  <rect x="494" y="226"  width="376" height="2" fill="#00d9c8" opacity="0.06"/>
-  <rect x="494" y="226"  width="0"   height="2" fill="url(#barFill)" filter="url(#barGlow)">
-    <animate attributeName="width" from="0" to="308" dur="1.55s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" begin="0.35s"/>
-  </rect>
+<!-- skill 5: Cloud / DevOps 82% -->
+<text x="476" y="214" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">Cloud / DevOps</text>
+<text x="860" y="214" font-family="'Courier New',monospace" font-size="9" fill="#1a6eee" text-anchor="end">82</text>
+<rect x="476" y="220" width="384" height="2" rx="1" fill="#6a8abf"/>
+<rect x="476" y="220" width="315" height="2" rx="1" fill="url(#skillbar)" filter="url(#barglow)"/>
+<circle cx="791" cy="221" r="3.5" fill="#1a6eee" filter="url(#barglow)"/>
 </svg>

@@ -1,45 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="44" viewBox="0 0 900 44">
-  <defs>
-    <filter id="liq" x="-2%" y="-2%" width="104%" height="104%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="0.4" result="b"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.65 0.35" numOctaves="2" seed="2" result="n"/>
-      <feDisplacementMap in="b" in2="n" scale="1.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feComposite in="d" in2="SourceGraphic" operator="atop"/>
-    </filter>
-    <linearGradient id="glassL" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0.02"/>
-    </linearGradient>
-    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="tealH" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#00d9c8" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#00d9c8" stop-opacity="0.6"/>
-      <stop offset="70%"  stop-color="#00d9c8" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="52" viewBox="0 0 900 52">
+<defs>
+  <linearGradient id="footbg" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1a6eee" stop-opacity="0.1"/>
+    <stop offset="50%" stop-color="#060d2e"/>
+    <stop offset="100%" stop-color="#1a6eee" stop-opacity="0.1"/>
+  </linearGradient>
+</defs>
 
-  <rect width="900" height="44" fill="#020809"/>
-  <rect width="900" height="44" fill="url(#glassL)" filter="url(#liq)"/>
-  <rect x="0" y="0" width="900" height="1" fill="url(#shine)" opacity="0.6"/>
-  <rect x="0" y="0" width="900" height="1" fill="url(#tealH)" opacity="0.4"/>
-  <rect x="0.5" y="0.5" width="899" height="43" fill="none" stroke="#00d9c8" stroke-width="1" stroke-opacity="0.1"/>
+<rect width="900" height="52" fill="#060d2e" rx="2"/>
+<rect width="900" height="52" fill="url(#footbg)"/>
+<rect width="900" height="52" fill="none" stroke="#6a8abf" stroke-width="1" rx="2"/>
 
-  <polyline points="0,12 0,0 12,0"       fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="888,0 900,0 900,12"   fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="0,32 0,44 12,44"      fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
-  <polyline points="888,44 900,44 900,32" fill="none" stroke="#00d9c8" stroke-width="1.5" stroke-opacity="0.7"/>
+<!-- corner brackets -->
+<line x1="0" y1="0" x2="18" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="0" x2="0" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="882" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="900" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="52" x2="18" y2="52" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="52" x2="0" y2="34" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="52" x2="882" y2="52" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="52" x2="900" y2="34" stroke="#1a6eee" stroke-width="1.5"/>
 
-  <circle cx="26" cy="22" r="3" fill="#00d9c8">
-    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <text x="36" y="26" font-family="Share Tech Mono,monospace" font-size="11" fill="#1e4a48">github.com/Me-moir</text>
+<!-- glass catchlight -->
+<line x1="80" y1="1" x2="820" y2="1" stroke="rgba(100,160,255,0.35)" stroke-width="0.5"/>
 
-  <text x="450" y="26" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#0d2424" letter-spacing="3">ship in silence.</text>
+<!-- online dot left -->
+<circle cx="32" cy="26" r="4" fill="#1a6eee">
+  <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+</circle>
+<circle cx="32" cy="26" r="9" fill="#1a6eee" fill-opacity="0">
+  <animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/>
+  <animate attributeName="fill-opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/>
+</circle>
+<text x="46" y="30" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">github.com/Me-moir</text>
 
-  <text x="874" y="26" text-anchor="end" font-family="Share Tech Mono,monospace" font-size="10" fill="#1e4a48">ONLINE</text>
+<!-- center tagline -->
+<text x="450" y="30" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf" text-anchor="middle" letter-spacing="2">ship in silence.</text>
+
+<!-- right status -->
+<text x="868" y="30" font-family="'Courier New',monospace" font-size="11" fill="#1a6eee" text-anchor="end" letter-spacing="1">ONLINE</text>
 </svg>
