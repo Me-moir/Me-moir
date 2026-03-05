@@ -190,9 +190,22 @@ def build_svg(grid, dates, max_val, total) -> str:
     prev_month = -1
     for c in range(COLS):
         month_idx = (now.month - 1 - (COLS - 1 - c) // 4 + 120) % 12
+        year_offset = (now.month - 1 - (COLS - 1 - c) // 4 + 120) // 12
+        year = now.year - (1 if year_offset == 0 and now.month <= (COLS // 4) else 0)
+        # compute actual year for this column
+        months_back = COLS - 1 - c
+        approx_month = now.month - (months_back // 4)
+        col_year = now.year + (approx_month - 1) // 12
+        if approx_month <= 0:
+            col_year = now.year - 1
         if month_idx != prev_month:
             mx = grid_x + c * (CELL + GAP)
-            L.append(f'<text x="{mx}" y="{TOP_H + MONTH_H - 5}" class="lbl">{months[month_idx]}</text>')
+            # show year only on January or first visible column
+            if month_idx == 0 or prev_month == -1:
+                label = f"{months[month_idx]} {col_year}"
+            else:
+                label = months[month_idx]
+            L.append(f'<text x="{mx}" y="{TOP_H + MONTH_H - 5}" class="lbl">{label}</text>')
             prev_month = month_idx
 
     # day labels
