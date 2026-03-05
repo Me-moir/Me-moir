@@ -23,14 +23,14 @@ CELL_MID    = "#1a4acc"
 CELL_HIGH   = "#1a6eee"
 CELL_PEAK   = "#ffab00"
 BORDER      = "#0d2460"
-TEXT_DIM    = "#6a8abf"
+TEXT_DIM    = "#c0d8ff"   # bright enough to read
 TEXT        = "#e0eeff"
 ACCENT      = "#1a6eee"
 
-# Grid — 26 weeks shown (6 months) to keep cells large enough for numbers
+# Grid — 26 weeks, large cells for numbers
 COLS        = 26
 ROWS        = 7
-CELL        = 28    # large enough to show a number
+CELL        = 28
 GAP         = 3
 SVG_W       = 900
 TOP_H       = 56
@@ -74,6 +74,7 @@ def fetch_contributions() -> dict:
 def build_grid(data: dict):
     weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
     total = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+    all_weeks = weeks  # keep all weeks for streak calculation
     weeks = weeks[-COLS:]
 
     grid, dates = [], []
@@ -93,7 +94,20 @@ def build_grid(data: dict):
         dates.insert(0, [""] * ROWS)
 
     max_val = max(max(col) for col in grid) or 1
-    return grid, dates, max_val, total
+
+    # compute current streak from all days
+    all_days = []
+    for week in all_weeks:
+        for day in week["contributionDays"]:
+            all_days.append(day["contributionCount"])
+    streak = 0
+    for cnt in reversed(all_days):
+        if cnt > 0:
+            streak += 1
+        else:
+            break
+
+    return grid, dates, max_val, total, streak
 
 
 def make_fallback_grid():
@@ -109,7 +123,8 @@ def make_fallback_grid():
             dcol.append("")
         grid.append(col)
         dates.append(dcol)
-    return grid, dates, max(max(c) for c in grid) or 1, 0
+    total = sum(sum(c) for c in grid)
+    return grid, dates, max(max(c) for c in grid) or 1, total, 0
 
 
 def cell_color(val, max_val):
@@ -122,10 +137,9 @@ def cell_color(val, max_val):
 
 
 def num_color(val, max_val):
-    """Text color on top of cell — lighter for dark cells, dark for amber."""
     if val == 0: return BORDER
     t = val / max_val
-    if t >= 0.80: return "#1a1a00"   # dark on amber
+    if t >= 0.80: return "#1a1a00"
     if t < 0.25:  return TEXT_DIM
     return TEXT
 
@@ -133,12 +147,12 @@ def num_color(val, max_val):
 def escape(s): return s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
 
 
-def build_svg(grid, dates, max_val, total) -> str:
-    grid_w = COLS * (CELL + GAP) - GAP
-    grid_h = ROWS * (CELL + GAP) - GAP
-    grid_x = (SVG_W - grid_w) // 2
+def build_svg(grid, dates, max_val, total, streak) -> str:
+    grid_w   = COLS * (CELL + GAP) - GAP
+    grid_h   = ROWS * (CELL + GAP) - GAP
+    grid_x   = (SVG_W - grid_w) // 2
     grid_top = TOP_H + MONTH_H
-    svg_h  = grid_top + grid_h + BOTTOM_H + 10
+    svg_h    = grid_top + grid_h + BOTTOM_H + 10
 
     L = []
     L.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{SVG_W}" height="{svg_h}" viewBox="0 0 {SVG_W} {svg_h}">')
@@ -150,7 +164,8 @@ def build_svg(grid, dates, max_val, total) -> str:
     L.append(f'    .sub   {{ font: 400 9px  "Courier New",monospace; fill:{TEXT_DIM}; letter-spacing:2px; }}')
     L.append(f'    .lbl   {{ font: 400 9px  "Courier New",monospace; fill:{TEXT_DIM}; }}')
     L.append(f'    .num   {{ font: 700 9px  "Courier New",monospace; text-anchor:middle; }}')
-    L.append(f'    .total {{ font: 700 13px "Courier New",monospace; fill:{TEXT}; }}')
+    L.append(f'    .stat  {{ font: 700 15px "Courier New",monospace; fill:{TEXT}; }}')
+    L.append(f'    .stlbl {{ font: 400 8px  "Courier New",monospace; fill:{TEXT_DIM}; letter-spacing:2px; }}')
     L.append(f'  </style>')
     L.append(f'  <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/>'
              f'<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>')
@@ -168,30 +183,36 @@ def build_svg(grid, dates, max_val, total) -> str:
     # glass catchlight
     L.append(f'<line x1="80" y1="1" x2="{SVG_W-80}" y2="1" stroke="rgba(100,160,255,0.4)" stroke-width="0.5"/>')
 
-    # header
+    # header bg
     L.append(f'<rect x="0" y="0" width="{SVG_W}" height="{TOP_H}" fill="{ACCENT}" fill-opacity="0.06" rx="2"/>')
     L.append(f'<rect x="0" y="{TOP_H}" width="{SVG_W}" height="1" fill="{BORDER}"/>')
 
     # pulse dot
-    L.append(f'<circle cx="28" cy="{TOP_H//2}" r="4" fill="{ACCENT}">'
+    mid = TOP_H // 2
+    L.append(f'<circle cx="28" cy="{mid}" r="4" fill="{ACCENT}">'
              f'<animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>')
-    L.append(f'<circle cx="28" cy="{TOP_H//2}" r="9" fill="{ACCENT}" fill-opacity="0">'
+    L.append(f'<circle cx="28" cy="{mid}" r="9" fill="{ACCENT}" fill-opacity="0">'
              f'<animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>'
              f'<animate attributeName="fill-opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/></circle>')
 
-    L.append(f'<text x="44" y="{TOP_H//2-5}" class="title">Commit Grid</text>')
-    L.append(f'<text x="44" y="{TOP_H//2+10}" class="sub">@{USERNAME.upper()} · LAST 26 WEEKS · NUMBERS = DAILY COMMITS</text>')
-    L.append(f'<text x="{SVG_W-28}" y="{TOP_H//2-5}" class="total" text-anchor="end">{total}</text>')
-    L.append(f'<text x="{SVG_W-28}" y="{TOP_H//2+10}" class="sub" text-anchor="end">TOTAL CONTRIBUTIONS</text>')
+    # left: title + subtitle
+    L.append(f'<text x="44" y="{mid-6}" class="title">Commit Grid</text>')
+    L.append(f'<text x="44" y="{mid+9}" class="sub">@{USERNAME.upper()} · LAST 26 WEEKS · NUMBERS = DAILY COMMITS</text>')
+
+    # right: total contributions | current streak  (two stat blocks)
+    # streak block
+    L.append(f'<text x="{SVG_W-28}" y="{mid-6}" class="stat" text-anchor="end">{total} CONTRIBUTIONS</text>')
+    L.append(f'<text x="{SVG_W-28}" y="{mid+9}" class="stlbl" text-anchor="end">{streak} DAY STREAK</text>')
+
+    # vertical separator between title and stats
+    L.append(f'<line x1="{SVG_W-220}" y1="10" x2="{SVG_W-220}" y2="{TOP_H-10}" stroke="{BORDER}" stroke-width="1"/>')
 
     # month labels
     months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     now = datetime.now(timezone.utc)
     prev_month = -1
     for c in range(COLS):
-        # calculate how many weeks back this column is
-        weeks_back = COLS - 1 - c
-        # approximate date for this column
+        weeks_back  = COLS - 1 - c
         approx_month = now.month - (weeks_back * 7 // 30)
         approx_year  = now.year
         while approx_month <= 0:
@@ -200,42 +221,35 @@ def build_svg(grid, dates, max_val, total) -> str:
         month_idx = (approx_month - 1) % 12
         if month_idx != prev_month:
             mx = grid_x + c * (CELL + GAP)
-            # always show year alongside month
-            label = f"{months[month_idx]} {approx_year}"
-            L.append(f'<text x="{mx}" y="{TOP_H + MONTH_H - 5}" class="lbl">{label}</text>')
+            L.append(f'<text x="{mx}" y="{TOP_H + MONTH_H - 5}" class="lbl">{months[month_idx]} {approx_year}</text>')
             prev_month = month_idx
 
     # day labels
-    day_labels = {0:"Mon", 2:"Wed", 4:"Fri", 6:"Sun"}
-    for r, label in day_labels.items():
+    for r, label in {0:"Mon", 2:"Wed", 4:"Fri", 6:"Sun"}.items():
         ly = grid_top + r * (CELL + GAP) + CELL // 2 + 3
         L.append(f'<text x="{grid_x - 8}" y="{ly}" class="lbl" text-anchor="end">{label}</text>')
 
     # cells
     for c in range(COLS):
         for r in range(ROWS):
-            val   = grid[c][r]
-            color = cell_color(val, max_val)
-            cx    = grid_x + c * (CELL + GAP)
-            cy    = grid_top + r * (CELL + GAP)
+            val    = grid[c][r]
+            color  = cell_color(val, max_val)
+            cx     = grid_x + c * (CELL + GAP)
+            cy     = grid_top + r * (CELL + GAP)
             cx_mid = cx + CELL // 2
             cy_mid = cy + CELL // 2 + 4
 
-            # glow behind peak cells
             if val > 0 and val >= max_val * 0.75:
                 L.append(f'<rect x="{cx-2}" y="{cy-2}" width="{CELL+4}" height="{CELL+4}" rx="3" '
                          f'fill="{color}" fill-opacity="0.35" filter="url(#glow)"/>')
 
-            # cell bg
             L.append(f'<rect x="{cx}" y="{cy}" width="{CELL}" height="{CELL}" rx="3" fill="{color}"/>')
 
-            # top shine
             if val > 0:
                 L.append(f'<rect x="{cx+2}" y="{cy+2}" width="{CELL-4}" height="4" rx="1" '
                          f'fill="white" fill-opacity="0.07"/>')
 
-            # number — show 0 on empty too so grid is readable
-            nc = num_color(val, max_val)
+            nc      = num_color(val, max_val)
             display = str(val) if val <= 99 else "99+"
             L.append(f'<text x="{cx_mid}" y="{cy_mid}" class="num" fill="{nc}">{display}</text>')
 
@@ -245,11 +259,11 @@ def build_svg(grid, dates, max_val, total) -> str:
     lx = grid_x + 44
     for color, label in [(CELL_EMPTY,"0"),(CELL_LOW,"1-2"),(CELL_MID,"3-5"),(CELL_HIGH,"6-9"),(CELL_PEAK,"10+")]:
         L.append(f'<rect x="{lx}" y="{legend_y}" width="{CELL}" height="{CELL}" rx="3" fill="{color}"/>')
-        L.append(f'<text x="{lx + CELL//2}" y="{legend_y + CELL//2 + 3}" class="num" fill="{num_color(1 if color!=CELL_EMPTY else 0, 1)}" style="font-size:8px">{label}</text>')
+        L.append(f'<text x="{lx+CELL//2}" y="{legend_y+CELL//2+3}" class="num" '
+                 f'fill="{num_color(1 if color!=CELL_EMPTY else 0,1)}" style="font-size:8px">{label}</text>')
         lx += CELL + GAP + 2
     L.append(f'<text x="{lx+4}" y="{legend_y+10}" class="lbl">COMMITS/DAY</text>')
 
-    # timestamp
     ts = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
     L.append(f'<text x="{SVG_W-28}" y="{legend_y+10}" class="sub" text-anchor="end">SYNCED {escape(ts)}</text>')
 
@@ -260,17 +274,15 @@ def build_svg(grid, dates, max_val, total) -> str:
 def main():
     try:
         data = fetch_contributions()
-        grid, dates, max_val, total = build_grid(data)
-        # fallback: compute total from grid if API returned 0
+        grid, dates, max_val, total, streak = build_grid(data)
         if total == 0:
             total = sum(sum(col) for col in grid)
-        print(f"✅ Fetched — max {max_val}/day, {total} total")
+        print(f"✅ Fetched — max {max_val}/day, {total} total, {streak} day streak")
     except Exception as exc:
         print(f"⚠ API failed ({exc}), using fallback")
-        grid, dates, max_val, total = make_fallback_grid()
-        total = sum(sum(col) for col in grid)
+        grid, dates, max_val, total, streak = make_fallback_grid()
 
-    svg = build_svg(grid, dates, max_val, total)
+    svg = build_svg(grid, dates, max_val, total, streak)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(svg)
     print(f"✅ Written {OUTPUT_PATH}")

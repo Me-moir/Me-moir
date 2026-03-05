@@ -16,11 +16,6 @@
 <img src="commitgrid.svg" width="900" alt="Commit Grid"/>
 </div>
 
-<br/>
-
-<div align="center">
-<img height="155" src="https://github-readme-streak-stats.herokuapp.com/?user=Me-moir&theme=dark&hide_border=true&background=060d2e&ring=1a6eee&fire=1a6eee&currStreakLabel=1a6eee&sideLabels=1a3a6e&dates=0d1f5c&stroke=0a1628"/>
-</div>
 
 <br/>
 
