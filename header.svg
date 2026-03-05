@@ -1,108 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" viewBox="0 0 860 160">
 <defs>
   <style>
-    .mono { font-family: "Courier New", monospace; }
-    .orbitron { font-family: "Courier New", monospace; font-weight: 900; }
+    .mono { font-family: "Courier New", Courier, monospace; }
+    .title { font-family: "Courier New", Courier, monospace; font-weight:900; font-size:48px; fill:#1a6eee;
+              letter-spacing:12px; text-transform:uppercase; }
+    .eyebrow { font-family: "Courier New", Courier, monospace; font-size:8px; fill:#3a5899; letter-spacing:4px; }
+    .handle  { font-family: "Courier New", Courier, monospace; font-size:9px;  fill:#3a5899; letter-spacing:6px; }
+    .tag     { font-family: "Courier New", Courier, monospace; font-size:8.5px; fill:#7a9dcc; letter-spacing:1px; }
+    .statnum { font-family: "Courier New", Courier, monospace; font-weight:700; font-size:26px; fill:#e8f2ff; letter-spacing:1px; }
+    .statlbl { font-family: "Courier New", Courier, monospace; font-size:7px; fill:#3a5899; letter-spacing:3px; }
+    .online  { font-family: "Courier New", Courier, monospace; font-size:7px;  fill:#3a5899; letter-spacing:2px; }
   </style>
-  <linearGradient id="hbg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#060d2e"/>
-    <stop offset="100%" stop-color="#02050f"/>
-  </linearGradient>
-  <linearGradient id="haccent" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#1a6eee" stop-opacity="0.18"/>
-    <stop offset="60%" stop-color="#e0eeff" stop-opacity="0.08"/>
-    <stop offset="100%" stop-color="#1a6eee" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="nameglow" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#4a9fff"/>
-    <stop offset="100%" stop-color="#1a6eee"/>
-  </linearGradient>
-  <filter id="textglow">
-    <feGaussianBlur stdDeviation="3" result="blur"/>
-    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="glow" x="-20%" y="-40%" width="140%" height="180%">
+    <feGaussianBlur stdDeviation="4" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <filter id="softglow">
-    <feGaussianBlur stdDeviation="8" result="blur"/>
-    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  <filter id="sglow" x="-10%" y="-20%" width="120%" height="140%">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
 </defs>
-
-<!-- bg -->
-<rect width="900" height="220" fill="url(#hbg)" rx="2"/>
-<rect width="900" height="220" fill="url(#haccent)"/>
-
-<!-- grid lines -->
-<line x1="0" y1="60" x2="900" y2="60" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.4"/>
-<line x1="0" y1="120" x2="900" y2="120" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.3"/>
-<line x1="0" y1="180" x2="900" y2="180" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.3"/>
-<line x1="180" y1="0" x2="180" y2="220" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.25"/>
-<line x1="450" y1="0" x2="450" y2="220" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.25"/>
-<line x1="720" y1="0" x2="720" y2="220" stroke="#e0eeff" stroke-width="0.4" stroke-opacity="0.25"/>
-
-<!-- border -->
-<rect width="900" height="220" fill="none" stroke="#6a8abf" stroke-width="1" rx="2"/>
-
-<!-- corner brackets -->
+<rect width="860" height="160" fill="#05091f" rx="3"/>
+<line x1="0" y1="0" x2="0" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="40" y1="0" x2="40" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="80" y1="0" x2="80" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="120" y1="0" x2="120" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="160" y1="0" x2="160" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="200" y1="0" x2="200" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="240" y1="0" x2="240" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="280" y1="0" x2="280" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="320" y1="0" x2="320" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="360" y1="0" x2="360" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="400" y1="0" x2="400" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="440" y1="0" x2="440" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="480" y1="0" x2="480" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="520" y1="0" x2="520" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="560" y1="0" x2="560" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="600" y1="0" x2="600" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="640" y1="0" x2="640" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="680" y1="0" x2="680" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="720" y1="0" x2="720" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="760" y1="0" x2="760" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="800" y1="0" x2="800" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="840" y1="0" x2="840" y2="160" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="0" y1="0" x2="860" y2="0" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="0" y1="40" x2="860" y2="40" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="0" y1="80" x2="860" y2="80" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<line x1="0" y1="120" x2="860" y2="120" stroke="#0d1e55" stroke-width="0.4" opacity="0.5"/>
+<radialGradient id="wash" cx="18%" cy="50%" r="50%"><stop offset="0%" stop-color="#1a6eee" stop-opacity="0.10"/><stop offset="100%" stop-color="#1a6eee" stop-opacity="0"/></radialGradient>
+<rect width="860" height="160" fill="url(#wash)"/>
+<rect width="860" height="160" fill="none" stroke="#142570" stroke-width="1" rx="3"/>
 <line x1="0" y1="0" x2="18" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
 <line x1="0" y1="0" x2="0" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="900" y1="0" x2="882" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="900" y1="0" x2="900" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="0" y1="220" x2="18" y2="220" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="0" y1="220" x2="0" y2="202" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="900" y1="220" x2="882" y2="220" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="900" y1="220" x2="900" y2="202" stroke="#1a6eee" stroke-width="1.5"/>
-
-<!-- top glass catchlight -->
-<line x1="80" y1="1" x2="820" y2="1" stroke="rgba(100,160,255,0.4)" stroke-width="0.5"/>
-
-<!-- section label -->
-<text x="48" y="48" font-family="'Courier New',monospace" font-size="9" fill="#6a8abf" letter-spacing="3">OPERATOR // PROFILE</text>
-
-<!-- name -->
-<text x="48" y="130" font-family="'Courier New',monospace" font-size="52" font-weight="900" letter-spacing="6" fill="url(#nameglow)" filter="url(#textglow)">MEMOIR</text>
-
-<!-- handle -->
-<text x="50" y="155" font-family="'Courier New',monospace" font-size="11" fill="#6a8abf" letter-spacing="4">@ME-MOIR</text>
-
-<!-- divider -->
-<line x1="48" y1="168" x2="520" y2="168" stroke="#6a8abf" stroke-width="0.8"/>
-
-<!-- focus items -->
-<text x="48" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Systems Architecture</text>
-<text x="228" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
-<text x="242" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Defense Tech</text>
-<text x="362" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
-<text x="376" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Full-Stack</text>
-<text x="464" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
-<text x="478" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">3D / WebGL</text>
-<text x="574" y="188" font-family="'Courier New',monospace" font-size="10" fill="#6a8abf">·</text>
-<text x="588" y="188" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff" letter-spacing="2">Data &amp; APIs</text>
-
-<!-- prompt -->
-<text x="48" y="208" font-family="'Courier New',monospace" font-size="11" fill="#1a6eee">$</text>
-<text x="62" y="208" font-family="'Courier New',monospace" font-size="11" fill="#e0eeff">ship in silence.</text>
-<rect x="198" y="197" width="7" height="13" fill="#1a6eee" opacity="0.8">
-  <animate attributeName="opacity" values="0.8;0;0.8" dur="1s" repeatCount="indefinite"/>
-</rect>
-
-<!-- stats top right -->
-<text x="852" y="80" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1a6eee" text-anchor="middle">04</text>
-<text x="852" y="93" font-family="'Courier New',monospace" font-size="8" fill="#6a8abf" text-anchor="middle" letter-spacing="2">REPOS</text>
-<text x="852" y="125" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1a6eee" text-anchor="middle">01</text>
-<text x="852" y="138" font-family="'Courier New',monospace" font-size="8" fill="#6a8abf" text-anchor="middle" letter-spacing="2">STARS</text>
-<text x="852" y="170" font-family="'Courier New',monospace" font-size="22" font-weight="700" fill="#1a6eee" text-anchor="middle">02</text>
-<text x="852" y="183" font-family="'Courier New',monospace" font-size="8" fill="#6a8abf" text-anchor="middle" letter-spacing="2">FOLLOWERS</text>
-
-<!-- vertical divider before stats -->
-<line x1="810" y1="56" x2="810" y2="200" stroke="#6a8abf" stroke-width="0.8"/>
-
-<!-- online dot -->
-<circle cx="862" cy="36" r="4" fill="#1a6eee">
-  <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
-</circle>
-<circle cx="862" cy="36" r="9" fill="#1a6eee" fill-opacity="0">
-  <animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>
-  <animate attributeName="fill-opacity" values="0.12;0;0.12" dur="2s" repeatCount="indefinite"/>
-</circle>
-<text x="874" y="40" font-family="'Courier New',monospace" font-size="9" fill="#e0eeff" letter-spacing="1">ONLINE</text>
+<line x1="860" y1="0" x2="842" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="860" y1="0" x2="860" y2="18" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="160" x2="18" y2="160" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="160" x2="0" y2="142" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="860" y1="160" x2="842" y2="160" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="860" y1="160" x2="860" y2="142" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="60" y1="1" x2="800" y2="1" stroke="rgba(100,160,255,0.35)" stroke-width="0.5"/>
+<rect x="742" y="0" width="118" height="160" fill="#070d28" opacity="0.7" rx="0"/>
+<line x1="742" y1="0" x2="742" y2="160" stroke="#142570" stroke-width="1"/>
+<text x="22" y="26" class="eyebrow">OPERATOR <tspan fill="#0d40aa">//</tspan> PROFILE</text>
+<text x="22" y="82" class="title" filter="url(#glow)">MEMOIR</text>
+<text x="22" y="100" class="handle">@ M E - M O I R</text>
+<line x1="22" y1="109" x2="202" y2="109" stroke="#1a6eee" stroke-width="0.8" opacity="0.6"/>
+<text x="22" y="127" class="tag" fill="#0d40aa">·</text>
+<text x="30" y="127" class="tag">Systems Arch.</text>
+<text x="116.60000000000001" y="127" class="tag" fill="#0d40aa">·</text>
+<text x="124.60000000000001" y="127" class="tag">Defense Tech</text>
+<text x="205.0" y="127" class="tag" fill="#0d40aa">·</text>
+<text x="213.0" y="127" class="tag">Full-Stack</text>
+<text x="281.0" y="127" class="tag" fill="#0d40aa">·</text>
+<text x="289.0" y="127" class="tag">3D / WebGL</text>
+<text x="357.0" y="127" class="tag" fill="#0d40aa">·</text>
+<text x="365.0" y="127" class="tag">Data & APIs</text>
+<text x="439.2" y="127" class="tag" fill="#0d40aa">·</text>
+<text x="447.2" y="127" class="tag">Palantir Foundry</text>
+<text x="846" y="18" class="online" text-anchor="end">ONLINE</text>
+<circle cx="852" cy="13.5" r="3.5" fill="#1a6eee"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+<text x="846" y="48" class="statnum" text-anchor="end" filter="url(#sglow)">04</text>
+<text x="846" y="60" class="statlbl" text-anchor="end">REPOS</text>
+<line x1="752" y1="69" x2="850" y2="69" stroke="#0d1e55" stroke-width="0.6"/>
+<text x="846" y="93" class="statnum" text-anchor="end" filter="url(#sglow)">01</text>
+<text x="846" y="105" class="statlbl" text-anchor="end">STARS</text>
+<line x1="752" y1="114" x2="850" y2="114" stroke="#0d1e55" stroke-width="0.6"/>
+<text x="846" y="138" class="statnum" text-anchor="end" filter="url(#sglow)">02</text>
+<text x="846" y="150" class="statlbl" text-anchor="end">FOLLOWERS</text>
 </svg>
