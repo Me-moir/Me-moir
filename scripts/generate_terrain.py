@@ -16,16 +16,16 @@ USERNAME    = "Me-moir"
 OUTPUT_PATH = "terrain.svg"
 TOKEN       = os.getenv("GITHUB_TOKEN", "")
 
-# Palette
-BG          = "#040c0e"
-TEAL        = "#00d9c8"
-TEAL2       = "#00b5a5"
-TEAL3       = "#007a72"
-TEAL4       = "#004a44"
-TEAL_DIM    = "#0d2b29"
-BORDER      = "#0d2b29"
-TEXT_DIM    = "#1e4a48"
-TEXT        = "#3a7a78"
+# Palette — nebula blue
+BG          = "#060d2e"
+TEAL        = "#1a6eee"
+TEAL2       = "#1a5acc"
+TEAL3       = "#0d3a8e"
+TEAL4       = "#0a2060"
+TEAL_DIM    = "#0d2460"
+BORDER      = "#0d2460"
+TEXT_DIM    = "#6a8abf"
+TEXT        = "#e0eeff"
 AMBER       = "#ffab00"
 # ─────────────────────────────────────────────────────────────────────────────
 

@@ -15,14 +15,14 @@ MAX_EVENTS  = 8
 OUTPUT_PATH = "activity.svg"
 TOKEN       = os.getenv("GITHUB_TOKEN", "")
 
-# Palette — matches terrain + profile SVGs
-BG          = "#040c0e"
-TEAL        = "#00d9c8"
-TEAL_MID    = "#007a72"
-TEAL_DIM    = "#1e4a48"
-BORDER      = "#0d2b29"
-TEXT        = "#3a7a78"
-TEXT_BRIGHT = "#a8cece"
+# Palette — nebula blue with light text
+BG          = "#060d2e"
+TEAL        = "#1a6eee"
+TEAL_MID    = "#1a5acc"
+TEAL_DIM    = "#0d2460"
+BORDER      = "#0d2460"
+TEXT        = "#6a8abf"
+TEXT_BRIGHT = "#e0eeff"
 AMBER       = "#ffab00"
 
 WIDTH       = 900
