@@ -68,12 +68,25 @@ def fetch_contributions() -> dict:
         }
     )
     with urllib.request.urlopen(req, timeout=15) as resp:
-        return json.loads(resp.read())
+        data = json.loads(resp.read())
+
+    # Surface API-level errors (e.g. bad token, missing scopes) so the
+    # caller's except block catches them and falls back correctly.
+    if "errors" in data:
+        raise RuntimeError(f"GitHub API errors: {data['errors']}")
+    if "data" not in data or data["data"] is None:
+        raise RuntimeError(f"Unexpected GitHub API response: {data}")
+
+    return data
 
 
 def build_grid(data: dict):
-    weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-    total = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+    calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    weeks = calendar["weeks"]
+    # Use the API's own total — this covers the full contribution year,
+    # not just the 26-week window we render.
+    total = calendar["totalContributions"]
+
     all_weeks = weeks  # keep all weeks for streak calculation
     weeks = weeks[-COLS:]
 
@@ -275,8 +288,6 @@ def main():
     try:
         data = fetch_contributions()
         grid, dates, max_val, total, streak = build_grid(data)
-        if total == 0:
-            total = sum(sum(col) for col in grid)
         print(f"✅ Fetched — max {max_val}/day, {total} total, {streak} day streak")
     except Exception as exc:
         print(f"⚠ API failed ({exc}), using fallback")
