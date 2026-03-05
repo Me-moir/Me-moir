@@ -2,9 +2,9 @@
 <defs>
   <style>
     .eyebrow { font-family:"Courier New",Courier,monospace; font-size:8px;   fill:#3a5899;    letter-spacing:4px; }
-    .title   { font-family:"Courier New",Courier,monospace; font-weight:900; font-size:48px; fill:#ffffff; letter-spacing:12px; }
-    .handle  { font-family:"Courier New",Courier,monospace; font-size:9px; font-weight:700; fill:#ffffff;    letter-spacing:2px; }
-    .tag     { font-family:"Courier New",Courier,monospace; font-size:8.5px; font-weight:700; fill:#ddeeff;  letter-spacing:1px; }
+    .title   { font-family:"Courier New",Courier,monospace; font-weight:900; font-size:48px; fill:#c8b8ff; letter-spacing:12px; }
+    .handle  { font-family:"Courier New",Courier,monospace; font-size:9px; font-weight:700; fill:#a0b4d8;    letter-spacing:2px; }
+    .tag     { font-family:"Courier New",Courier,monospace; font-size:8.5px; font-weight:700; fill:#a0b4d8;  letter-spacing:1px; }
     .statnum { font-family:"Courier New",Courier,monospace; font-weight:700; font-size:26px; fill:#e8f2ff; letter-spacing:1px; }
     .statlbl { font-family:"Courier New",Courier,monospace; font-size:7px;   fill:#3a5899;    letter-spacing:3px; }
     .online  { font-family:"Courier New",Courier,monospace; font-size:7px;   fill:#3a5899;    letter-spacing:2px; }
