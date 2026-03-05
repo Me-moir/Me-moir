@@ -13,7 +13,7 @@
 <br/>
 
 <div align="center">
-<img height="155" src="https://github-readme-streak-stats.herokuapp.com/?user=Me-moir&theme=dark&hide_border=true&background=040c0e&ring=00D9C8&fire=00D9C8&currStreakLabel=00D9C8&sideLabels=3a7a78&dates=1e4a48&stroke=0a1e1e"/>
+<img height="155" src="https://github-readme-streak-stats.herokuapp.com/?user=Me-moir&theme=dark&hide_border=true&background=060d2e&ring=1a6eee&fire=1a6eee&currStreakLabel=1a6eee&sideLabels=1a3a6e&dates=0d1f5c&stroke=0a1628"/>
 </div>
 
 <br/>
@@ -37,7 +37,7 @@
 <br/>
 
 <div align="center">
-<img width="900" src="https://github-readme-activity-graph.vercel.app/graph?username=Me-moir&bg_color=040c0e&color=00d9c8&line=00d9c8&point=00d9c8&area=true&hide_border=true&area_color=00d9c8"/>
+<img width="900" src="https://github-readme-activity-graph.vercel.app/graph?username=Me-moir&bg_color=060d2e&color=1a6eee&line=1a6eee&point=1a6eee&area=true&hide_border=true&area_color=1a6eee"/>
 </div>
 
 <div align="center">
