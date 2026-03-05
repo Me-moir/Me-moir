@@ -19,6 +19,12 @@
 <br/>
 
 <div align="center">
+<img src="commitgrid.svg" width="900" alt="Commit Grid"/>
+</div>
+
+<br/>
+
+<div align="center">
 <img src="terrain.svg" width="900" alt="Commit Terrain"/>
 </div>
 

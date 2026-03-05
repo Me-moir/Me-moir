@@ -132,23 +132,25 @@ def iso(col, row):
 
 
 def lerp_color(t):
-    """0=dim teal → 1=bright teal, with amber spike at top."""
+    """0=deep navy → 1=bright blue, with amber spike at top."""
     if t < 0.0:
         t = 0.0
     if t > 1.0:
         t = 1.0
     if t < 0.5:
-        # dim teal → mid teal
-        r1, g1, b1 = 0x0d, 0x2b, 0x29
-        r2, g2, b2 = 0x00, 0x7a, 0x72
+        # deep navy → mid blue
+        r1, g1, b1 = 0x0a, 0x20, 0x60   # #0a2060
+        r2, g2, b2 = 0x0d, 0x3a, 0x8e   # #0d3a8e
         f = t * 2
     elif t < 0.85:
-        r1, g1, b1 = 0x00, 0x7a, 0x72
-        r2, g2, b2 = 0x00, 0xd9, 0xc8
+        # mid blue → bright blue
+        r1, g1, b1 = 0x0d, 0x3a, 0x8e   # #0d3a8e
+        r2, g2, b2 = 0x1a, 0x6e, 0xee   # #1a6eee
         f = (t - 0.5) / 0.35
     else:
-        r1, g1, b1 = 0x00, 0xd9, 0xc8
-        r2, g2, b2 = 0xff, 0xab, 0x00
+        # bright blue → amber peak
+        r1, g1, b1 = 0x1a, 0x6e, 0xee   # #1a6eee
+        r2, g2, b2 = 0xff, 0xab, 0x00   # #ffab00
         f = (t - 0.85) / 0.15
 
     r = int(r1 + (r2 - r1) * f)
