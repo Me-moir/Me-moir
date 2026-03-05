@@ -27,7 +27,7 @@ jobs:
       - name: Generate terrain.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/generate_terrain.py
+        run: python scripts/terrain.py
 
       - name: Commit & push if changed
         run: |
