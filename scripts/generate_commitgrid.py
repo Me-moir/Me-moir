@@ -141,19 +141,18 @@ def make_fallback_grid():
 
 
 def cell_color(val, max_val):
-    if val == 0: return CELL_EMPTY
-    t = val / max_val
-    if t < 0.25: return CELL_LOW
-    if t < 0.55: return CELL_MID
-    if t < 0.80: return CELL_HIGH
+    # Absolute ranges matching the legend: 0, 1-2, 3-5, 6-9, 10+
+    if val == 0:   return CELL_EMPTY
+    if val <= 2:   return CELL_LOW
+    if val <= 5:   return CELL_MID
+    if val <= 9:   return CELL_HIGH
     return CELL_PEAK
 
 
 def num_color(val, max_val):
-    if val == 0: return BORDER
-    t = val / max_val
-    if t >= 0.80: return "#1a1a00"
-    if t < 0.25:  return TEXT_DIM
+    if val == 0:  return BORDER
+    if val >= 10: return "#1a1a00"   # dark text on orange/peak
+    if val <= 2:  return TEXT_DIM
     return TEXT
 
 
@@ -220,21 +219,19 @@ def build_svg(grid, dates, max_val, total, streak) -> str:
     # vertical separator between title and stats
     L.append(f'<line x1="{SVG_W-220}" y1="10" x2="{SVG_W-220}" y2="{TOP_H-10}" stroke="{BORDER}" stroke-width="1"/>')
 
-    # month labels
+    # month labels — read from actual date strings in the grid
     months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-    now = datetime.now(timezone.utc)
     prev_month = -1
     for c in range(COLS):
-        weeks_back  = COLS - 1 - c
-        approx_month = now.month - (weeks_back * 7 // 30)
-        approx_year  = now.year
-        while approx_month <= 0:
-            approx_month += 12
-            approx_year  -= 1
-        month_idx = (approx_month - 1) % 12
+        # find the first non-empty date in this column
+        col_date = next((d for d in dates[c] if d), None)
+        if not col_date:
+            continue
+        year, month, _ = col_date.split("-")
+        month_idx = int(month) - 1
         if month_idx != prev_month:
             mx = grid_x + c * (CELL + GAP)
-            L.append(f'<text x="{mx}" y="{TOP_H + MONTH_H - 5}" class="lbl">{months[month_idx]} {approx_year}</text>')
+            L.append(f'<text x="{mx}" y="{TOP_H + MONTH_H - 5}" class="lbl">{months[month_idx]} {year}</text>')
             prev_month = month_idx
 
     # day labels
