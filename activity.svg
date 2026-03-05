@@ -1,105 +1,105 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="456" viewBox="0 0 900 456">
 <defs>
   <style>
-    .title { font: 600 11px "Courier New",monospace; fill:#00d9c8; letter-spacing:3px; text-transform:uppercase; }
-    .sub   { font: 400 9px  "Courier New",monospace; fill:#1e4a48; letter-spacing:2px; }
-    .repo  { font: 400 9px  "Courier New",monospace; fill:#3a7a78; letter-spacing:1px; text-transform:uppercase; }
-    .msg   { font: 400 12px "Courier New",monospace; fill:#a8cece; }
-    .meta  { font: 400 10px "Courier New",monospace; fill:#3a7a78; }
-    .ts    { font: 400 10px "Courier New",monospace; fill:#1e4a48; }
+    .title { font: 600 11px "Courier New",monospace; fill:#1a6eee; letter-spacing:3px; text-transform:uppercase; }
+    .sub   { font: 400 9px  "Courier New",monospace; fill:#0d2460; letter-spacing:2px; }
+    .repo  { font: 400 9px  "Courier New",monospace; fill:#6a8abf; letter-spacing:1px; text-transform:uppercase; }
+    .msg   { font: 400 12px "Courier New",monospace; fill:#e0eeff; }
+    .meta  { font: 400 10px "Courier New",monospace; fill:#6a8abf; }
+    .ts    { font: 400 10px "Courier New",monospace; fill:#0d2460; }
     .tag   { font: 700 8px  "Courier New",monospace; letter-spacing:1px; }
   </style>
-  <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00d9c8" stop-opacity=".12"/><stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/></linearGradient>
-  <linearGradient id="rg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00d9c8" stop-opacity=".05"/><stop offset="100%" stop-color="#00d9c8" stop-opacity="0"/></linearGradient>
+  <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a6eee" stop-opacity=".12"/><stop offset="100%" stop-color="#1a6eee" stop-opacity="0"/></linearGradient>
+  <linearGradient id="rg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a6eee" stop-opacity=".05"/><stop offset="100%" stop-color="#1a6eee" stop-opacity="0"/></linearGradient>
   <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect width="900" height="456" fill="#040c0e" rx="2"/>
-<rect width="900" height="456" fill="none" stroke="#0d2b29" stroke-width="1" rx="2"/>
-<line x1="0" y1="0" x2="12" y2="0" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="0" y1="0" x2="0" y2="12" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="900" y1="0" x2="888" y2="0" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="900" y1="0" x2="900" y2="12" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="0" y1="456" x2="12" y2="456" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="0" y1="456" x2="0" y2="444" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="900" y1="456" x2="888" y2="456" stroke="#00d9c8" stroke-width="1.5"/>
-<line x1="900" y1="456" x2="900" y2="444" stroke="#00d9c8" stroke-width="1.5"/>
+<rect width="900" height="456" fill="#060d2e" rx="2"/>
+<rect width="900" height="456" fill="none" stroke="#0d2460" stroke-width="1" rx="2"/>
+<line x1="0" y1="0" x2="12" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="0" x2="0" y2="12" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="888" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="0" x2="900" y2="12" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="456" x2="12" y2="456" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="456" x2="0" y2="444" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="456" x2="888" y2="456" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="456" x2="900" y2="444" stroke="#1a6eee" stroke-width="1.5"/>
 <line x1="80" y1="1" x2="820" y2="1" stroke="rgba(0,217,200,0.35)" stroke-width="0.5"/>
 <rect x="0" y="0" width="900" height="56" fill="url(#hg)" rx="2"/>
-<rect x="0" y="56" width="900" height="1" fill="#0d2b29"/>
-<circle cx="28" cy="28" r="4" fill="#00d9c8" filter="url(#glow)"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
-<circle cx="28" cy="28" r="8" fill="#00d9c8" fill-opacity="0.0"><animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/></circle>
+<rect x="0" y="56" width="900" height="1" fill="#0d2460"/>
+<circle cx="28" cy="28" r="4" fill="#1a6eee" filter="url(#glow)"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+<circle cx="28" cy="28" r="8" fill="#1a6eee" fill-opacity="0.0"><animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/></circle>
 <text x="46" y="24" class="title">Recent Activity</text>
 <text x="46" y="38" class="sub">@ME-MOIR</text>
-<text x="872" y="24" class="sub" text-anchor="end">SYNCED 05 Mar 2026  10:21 UTC</text>
+<text x="872" y="24" class="sub" text-anchor="end">SYNCED 05 Mar 2026  10:37 UTC</text>
 <text x="872" y="38" class="sub" text-anchor="end">AUTO-UPDATES EVERY 30 MIN</text>
 <rect x="1" y="57" width="898" height="45" fill="url(#rg)"/>
-<rect x="0" y="62" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="70" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="82" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
+<rect x="0" y="62" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="70" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="82" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
 <text x="78" y="78" class="repo">Me-moir</text>
 <text x="78" y="92" class="msg">pushed</text>
 <text x="782" y="78" class="meta">+0 commits</text>
 <text x="872" y="92" class="ts" text-anchor="end">just now</text>
-<line x1="28" y1="102" x2="872" y2="102" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="108" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="116" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="128" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
-<text x="78" y="124" class="repo">Kizuna-Tree</text>
+<line x1="28" y1="102" x2="872" y2="102" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="108" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="116" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="128" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
+<text x="78" y="124" class="repo">Me-moir</text>
 <text x="78" y="138" class="msg">pushed</text>
 <text x="782" y="124" class="meta">+0 commits</text>
-<text x="872" y="138" class="ts" text-anchor="end">45m ago</text>
+<text x="872" y="138" class="ts" text-anchor="end">7m ago</text>
 <rect x="1" y="149" width="898" height="45" fill="url(#rg)"/>
-<line x1="28" y1="148" x2="872" y2="148" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="154" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="162" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="174" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
-<text x="78" y="170" class="repo">Notus-Regalia</text>
+<line x1="28" y1="148" x2="872" y2="148" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="154" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="162" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="174" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
+<text x="78" y="170" class="repo">Me-moir</text>
 <text x="78" y="184" class="msg">pushed</text>
 <text x="782" y="170" class="meta">+0 commits</text>
-<text x="872" y="184" class="ts" text-anchor="end">1h ago</text>
-<line x1="28" y1="194" x2="872" y2="194" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="200" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="208" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="220" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
-<text x="78" y="216" class="repo">Notus-Regalia</text>
+<text x="872" y="184" class="ts" text-anchor="end">9m ago</text>
+<line x1="28" y1="194" x2="872" y2="194" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="200" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="208" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="220" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
+<text x="78" y="216" class="repo">Me-moir</text>
 <text x="78" y="230" class="msg">pushed</text>
 <text x="782" y="216" class="meta">+0 commits</text>
-<text x="872" y="230" class="ts" text-anchor="end">1h ago</text>
+<text x="872" y="230" class="ts" text-anchor="end">16m ago</text>
 <rect x="1" y="241" width="898" height="45" fill="url(#rg)"/>
-<line x1="28" y1="240" x2="872" y2="240" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="246" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="254" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="266" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
-<text x="78" y="262" class="repo">Me-moir</text>
+<line x1="28" y1="240" x2="872" y2="240" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="246" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="254" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="266" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
+<text x="78" y="262" class="repo">Kizuna-Tree</text>
 <text x="78" y="276" class="msg">pushed</text>
 <text x="782" y="262" class="meta">+0 commits</text>
-<text x="872" y="276" class="ts" text-anchor="end">16h ago</text>
-<line x1="28" y1="286" x2="872" y2="286" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="292" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="300" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="312" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
-<text x="78" y="308" class="repo">Me-moir</text>
+<text x="872" y="276" class="ts" text-anchor="end">1h ago</text>
+<line x1="28" y1="286" x2="872" y2="286" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="292" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="300" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="312" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
+<text x="78" y="308" class="repo">Notus-Regalia</text>
 <text x="78" y="322" class="msg">pushed</text>
 <text x="782" y="308" class="meta">+0 commits</text>
-<text x="872" y="322" class="ts" text-anchor="end">16h ago</text>
+<text x="872" y="322" class="ts" text-anchor="end">1h ago</text>
 <rect x="1" y="333" width="898" height="45" fill="url(#rg)"/>
-<line x1="28" y1="332" x2="872" y2="332" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="338" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="346" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="358" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
-<text x="78" y="354" class="repo">Me-moir</text>
+<line x1="28" y1="332" x2="872" y2="332" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="338" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="346" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="358" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
+<text x="78" y="354" class="repo">Notus-Regalia</text>
 <text x="78" y="368" class="msg">pushed</text>
 <text x="782" y="354" class="meta">+0 commits</text>
-<text x="872" y="368" class="ts" text-anchor="end">16h ago</text>
-<line x1="28" y1="378" x2="872" y2="378" stroke="#0d2b29" stroke-width="1"/>
-<rect x="0" y="384" width="2" height="34" fill="#00d9c8" opacity="0.7" rx="1"/>
-<rect x="28" y="392" width="38" height="15" rx="2" fill="#00d9c8" fill-opacity="0.1" stroke="#00d9c8" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="404" class="tag" fill="#00d9c8" text-anchor="middle">PUSH</text>
+<text x="872" y="368" class="ts" text-anchor="end">1h ago</text>
+<line x1="28" y1="378" x2="872" y2="378" stroke="#0d2460" stroke-width="1"/>
+<rect x="0" y="384" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
+<rect x="28" y="392" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
+<text x="47" y="404" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
 <text x="78" y="400" class="repo">Me-moir</text>
 <text x="78" y="414" class="msg">pushed</text>
 <text x="782" y="400" class="meta">+0 commits</text>
 <text x="872" y="414" class="ts" text-anchor="end">16h ago</text>
-<rect x="0" y="424" width="900" height="32" fill="#0d2b29" fill-opacity="0.3" rx="2"/>
-<rect x="0" y="424" width="900" height="1" fill="#0d2b29"/>
+<rect x="0" y="424" width="900" height="32" fill="#0d2460" fill-opacity="0.3" rx="2"/>
+<rect x="0" y="424" width="900" height="1" fill="#0d2460"/>
 <text x="450" y="444" class="sub" text-anchor="middle">github.com/Me-moir</text>
 </svg>
