@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="456" viewBox="0 0 900 456">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="364" viewBox="0 0 900 364">
 <defs>
   <style>
     .title { font: 600 11px "Courier New",monospace; fill:#1a6eee; letter-spacing:3px; text-transform:uppercase; }
@@ -13,16 +13,16 @@
   <linearGradient id="rg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1a6eee" stop-opacity=".05"/><stop offset="100%" stop-color="#1a6eee" stop-opacity="0"/></linearGradient>
   <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect width="900" height="456" fill="#060d2e" rx="2"/>
-<rect width="900" height="456" fill="none" stroke="#0d2460" stroke-width="1" rx="2"/>
+<rect width="900" height="364" fill="#060d2e" rx="2"/>
+<rect width="900" height="364" fill="none" stroke="#0d2460" stroke-width="1" rx="2"/>
 <line x1="0" y1="0" x2="12" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
 <line x1="0" y1="0" x2="0" y2="12" stroke="#1a6eee" stroke-width="1.5"/>
 <line x1="900" y1="0" x2="888" y2="0" stroke="#1a6eee" stroke-width="1.5"/>
 <line x1="900" y1="0" x2="900" y2="12" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="0" y1="456" x2="12" y2="456" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="0" y1="456" x2="0" y2="444" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="900" y1="456" x2="888" y2="456" stroke="#1a6eee" stroke-width="1.5"/>
-<line x1="900" y1="456" x2="900" y2="444" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="364" x2="12" y2="364" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="0" y1="364" x2="0" y2="352" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="364" x2="888" y2="364" stroke="#1a6eee" stroke-width="1.5"/>
+<line x1="900" y1="364" x2="900" y2="352" stroke="#1a6eee" stroke-width="1.5"/>
 <line x1="80" y1="1" x2="820" y2="1" stroke="rgba(0,217,200,0.35)" stroke-width="0.5"/>
 <rect x="0" y="0" width="900" height="56" fill="url(#hg)" rx="2"/>
 <rect x="0" y="56" width="900" height="1" fill="#0d2460"/>
@@ -30,7 +30,7 @@
 <circle cx="28" cy="28" r="8" fill="#1a6eee" fill-opacity="0.0"><animate attributeName="r" values="5;11;5" dur="2s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/></circle>
 <text x="46" y="24" class="title">Recent Activity</text>
 <text x="46" y="38" class="sub">@ME-MOIR</text>
-<text x="872" y="24" class="sub" text-anchor="end">SYNCED 19 Apr 2026  18:03 UTC</text>
+<text x="872" y="24" class="sub" text-anchor="end">SYNCED 19 Apr 2026  19:23 UTC</text>
 <text x="872" y="38" class="sub" text-anchor="end">AUTO-UPDATES EVERY 30 MIN</text>
 <rect x="1" y="57" width="898" height="45" fill="url(#rg)"/>
 <rect x="0" y="62" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
@@ -81,24 +81,7 @@
 <text x="78" y="322" class="msg">pushed</text>
 <text x="782" y="308" class="meta">+0 commits</text>
 <text x="872" y="322" class="ts" text-anchor="end">28d ago</text>
-<rect x="1" y="333" width="898" height="45" fill="url(#rg)"/>
-<line x1="28" y1="332" x2="872" y2="332" stroke="#0d2460" stroke-width="1"/>
-<rect x="0" y="338" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
-<rect x="28" y="346" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="358" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
-<text x="78" y="354" class="repo">Notus-Regalia</text>
-<text x="78" y="368" class="msg">pushed</text>
-<text x="782" y="354" class="meta">+0 commits</text>
-<text x="872" y="368" class="ts" text-anchor="end">30d ago</text>
-<line x1="28" y1="378" x2="872" y2="378" stroke="#0d2460" stroke-width="1"/>
-<rect x="0" y="384" width="2" height="34" fill="#1a6eee" opacity="0.7" rx="1"/>
-<rect x="28" y="392" width="38" height="15" rx="2" fill="#1a6eee" fill-opacity="0.1" stroke="#1a6eee" stroke-opacity="0.4" stroke-width="0.5"/>
-<text x="47" y="404" class="tag" fill="#1a6eee" text-anchor="middle">PUSH</text>
-<text x="78" y="400" class="repo">Notus-Regalia</text>
-<text x="78" y="414" class="msg">pushed</text>
-<text x="782" y="400" class="meta">+0 commits</text>
-<text x="872" y="414" class="ts" text-anchor="end">30d ago</text>
-<rect x="0" y="424" width="900" height="32" fill="#0d2460" fill-opacity="0.3" rx="2"/>
-<rect x="0" y="424" width="900" height="1" fill="#0d2460"/>
-<text x="450" y="444" class="sub" text-anchor="middle">github.com/Me-moir</text>
+<rect x="0" y="332" width="900" height="32" fill="#0d2460" fill-opacity="0.3" rx="2"/>
+<rect x="0" y="332" width="900" height="1" fill="#0d2460"/>
+<text x="450" y="352" class="sub" text-anchor="middle">github.com/Me-moir</text>
 </svg>
