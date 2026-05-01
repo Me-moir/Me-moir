@@ -28,7 +28,7 @@
 <text x="44" y="22" class="title">Commit Grid</text>
 <text x="44" y="37" class="sub">@ME-MOIR · LAST 26 WEEKS · NUMBERS = DAILY COMMITS</text>
 <text x="872" y="22" class="stat" text-anchor="end">216 CONTRIBUTIONS</text>
-<text x="872" y="37" class="stlbl" text-anchor="end">1 DAY STREAK</text>
+<text x="872" y="37" class="stlbl" text-anchor="end">0 DAY STREAK</text>
 <line x1="680" y1="10" x2="680" y2="46" stroke="#0d2460" stroke-width="1"/>
 <text x="48" y="73" class="lbl">Nov 2025</text>
 <text x="203" y="73" class="lbl">Dec 2025</text>
@@ -463,5 +463,5 @@
 <rect x="224" y="306" width="28" height="28" rx="3" fill="#ffab00"/>
 <text x="238" y="323" class="num" fill="#c0d8ff" style="font-size:8px">10+</text>
 <text x="261" y="316" class="lbl">COMMITS/DAY</text>
-<text x="872" y="316" class="sub" text-anchor="end">SYNCED 30 Apr 2026 23:42 UTC</text>
+<text x="872" y="316" class="sub" text-anchor="end">SYNCED 01 May 2026 02:07 UTC</text>
 </svg>
