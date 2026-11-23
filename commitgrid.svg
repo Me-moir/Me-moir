@@ -27,8 +27,8 @@
 <circle cx="28" cy="28" r="9" fill="#1a6eee" fill-opacity="0"><animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.1;0;0.1" dur="2s" repeatCount="indefinite"/></circle>
 <text x="44" y="22" class="title">Commit Grid</text>
 <text x="44" y="37" class="sub">@ME-MOIR · LAST 26 WEEKS · NUMBERS = DAILY COMMITS</text>
-<text x="872" y="22" class="stat" text-anchor="end">157 CONTRIBUTIONS</text>
-<text x="872" y="37" class="stlbl" text-anchor="end">0 DAY STREAK</text>
+<text x="872" y="22" class="stat" text-anchor="end">441 CONTRIBUTIONS</text>
+<text x="872" y="37" class="stlbl" text-anchor="end">1 DAY STREAK</text>
 <line x1="680" y1="10" x2="680" y2="46" stroke="#0d2460" stroke-width="1"/>
 <text x="48" y="73" class="lbl">May 2026</text>
 <text x="79" y="73" class="lbl">Jun 2026</text>
@@ -59,41 +59,55 @@
 <text x="93" y="96" class="num" fill="#0d2460">0</text>
 <rect x="79" y="109" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="93" y="127" class="num" fill="#0d2460">0</text>
-<rect x="79" y="140" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="93" y="158" class="num" fill="#0d2460">0</text>
-<rect x="79" y="171" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="93" y="189" class="num" fill="#0d2460">0</text>
-<rect x="79" y="202" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="93" y="220" class="num" fill="#0d2460">0</text>
-<rect x="79" y="233" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="93" y="251" class="num" fill="#0d2460">0</text>
+<rect x="79" y="140" width="28" height="28" rx="3" fill="#1a6eee"/>
+<rect x="81" y="142" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="93" y="158" class="num" fill="#e0eeff">8</text>
+<rect x="79" y="171" width="28" height="28" rx="3" fill="#1a6eee"/>
+<rect x="81" y="173" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="93" y="189" class="num" fill="#e0eeff">8</text>
+<rect x="79" y="202" width="28" height="28" rx="3" fill="#1a6eee"/>
+<rect x="81" y="204" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="93" y="220" class="num" fill="#e0eeff">8</text>
+<rect x="79" y="233" width="28" height="28" rx="3" fill="#0d2a7a"/>
+<rect x="81" y="235" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="93" y="251" class="num" fill="#c0d8ff">2</text>
 <rect x="79" y="264" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="93" y="282" class="num" fill="#0d2460">0</text>
 <rect x="110" y="78" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="124" y="96" class="num" fill="#0d2460">0</text>
-<rect x="110" y="109" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="124" y="127" class="num" fill="#0d2460">0</text>
-<rect x="110" y="140" width="28" height="28" rx="3" fill="#1a4acc"/>
+<rect x="110" y="109" width="28" height="28" rx="3" fill="#ffab00"/>
+<rect x="112" y="111" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="124" y="127" class="num" fill="#1a1a00">14</text>
+<rect x="108" y="138" width="32" height="32" rx="3" fill="#ffab00" fill-opacity="0.35" filter="url(#glow)"/>
+<rect x="110" y="140" width="28" height="28" rx="3" fill="#ffab00"/>
 <rect x="112" y="142" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
-<text x="124" y="158" class="num" fill="#e0eeff">3</text>
-<rect x="110" y="171" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="124" y="189" class="num" fill="#0d2460">0</text>
+<text x="124" y="158" class="num" fill="#1a1a00">49</text>
+<rect x="110" y="171" width="28" height="28" rx="3" fill="#1a6eee"/>
+<rect x="112" y="173" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="124" y="189" class="num" fill="#e0eeff">6</text>
 <rect x="110" y="202" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="124" y="220" class="num" fill="#0d2460">0</text>
-<rect x="110" y="233" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="124" y="251" class="num" fill="#0d2460">0</text>
-<rect x="110" y="264" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="124" y="282" class="num" fill="#0d2460">0</text>
-<rect x="141" y="78" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="155" y="96" class="num" fill="#0d2460">0</text>
-<rect x="141" y="109" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="155" y="127" class="num" fill="#0d2460">0</text>
-<rect x="141" y="140" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="155" y="158" class="num" fill="#0d2460">0</text>
-<rect x="141" y="171" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="155" y="189" class="num" fill="#0d2460">0</text>
-<rect x="141" y="202" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="155" y="220" class="num" fill="#0d2460">0</text>
+<rect x="110" y="233" width="28" height="28" rx="3" fill="#1a6eee"/>
+<rect x="112" y="235" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="124" y="251" class="num" fill="#e0eeff">6</text>
+<rect x="110" y="264" width="28" height="28" rx="3" fill="#1a4acc"/>
+<rect x="112" y="266" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="124" y="282" class="num" fill="#e0eeff">4</text>
+<rect x="141" y="78" width="28" height="28" rx="3" fill="#0d2a7a"/>
+<rect x="143" y="80" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="155" y="96" class="num" fill="#c0d8ff">2</text>
+<rect x="141" y="109" width="28" height="28" rx="3" fill="#ffab00"/>
+<rect x="143" y="111" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="155" y="127" class="num" fill="#1a1a00">18</text>
+<rect x="141" y="140" width="28" height="28" rx="3" fill="#0d2a7a"/>
+<rect x="143" y="142" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="155" y="158" class="num" fill="#c0d8ff">1</text>
+<rect x="141" y="171" width="28" height="28" rx="3" fill="#1a4acc"/>
+<rect x="143" y="173" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="155" y="189" class="num" fill="#e0eeff">5</text>
+<rect x="141" y="202" width="28" height="28" rx="3" fill="#0d2a7a"/>
+<rect x="143" y="204" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="155" y="220" class="num" fill="#c0d8ff">1</text>
 <rect x="141" y="233" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="155" y="251" class="num" fill="#0d2460">0</text>
 <rect x="141" y="264" width="28" height="28" rx="3" fill="#0a1640"/>
@@ -318,7 +332,6 @@
 <rect x="637" y="78" width="28" height="28" rx="3" fill="#1a4acc"/>
 <rect x="639" y="80" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="651" y="96" class="num" fill="#e0eeff">5</text>
-<rect x="635" y="107" width="32" height="32" rx="3" fill="#1a6eee" fill-opacity="0.35" filter="url(#glow)"/>
 <rect x="637" y="109" width="28" height="28" rx="3" fill="#1a6eee"/>
 <rect x="639" y="111" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="651" y="127" class="num" fill="#e0eeff">8</text>
@@ -336,11 +349,9 @@
 <rect x="637" y="264" width="28" height="28" rx="3" fill="#0d2a7a"/>
 <rect x="639" y="266" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="651" y="282" class="num" fill="#c0d8ff">1</text>
-<rect x="666" y="76" width="32" height="32" rx="3" fill="#1a6eee" fill-opacity="0.35" filter="url(#glow)"/>
 <rect x="668" y="78" width="28" height="28" rx="3" fill="#1a6eee"/>
 <rect x="670" y="80" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="682" y="96" class="num" fill="#e0eeff">8</text>
-<rect x="666" y="107" width="32" height="32" rx="3" fill="#1a6eee" fill-opacity="0.35" filter="url(#glow)"/>
 <rect x="668" y="109" width="28" height="28" rx="3" fill="#1a6eee"/>
 <rect x="670" y="111" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="682" y="127" class="num" fill="#e0eeff">8</text>
@@ -360,7 +371,6 @@
 <rect x="699" y="109" width="28" height="28" rx="3" fill="#0d2a7a"/>
 <rect x="701" y="111" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="713" y="127" class="num" fill="#c0d8ff">1</text>
-<rect x="697" y="138" width="32" height="32" rx="3" fill="#1a6eee" fill-opacity="0.35" filter="url(#glow)"/>
 <rect x="699" y="140" width="28" height="28" rx="3" fill="#1a6eee"/>
 <rect x="701" y="142" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
 <text x="713" y="158" class="num" fill="#e0eeff">8</text>
@@ -419,14 +429,16 @@
 <text x="806" y="189" class="num" fill="#0d2460">0</text>
 <rect x="792" y="202" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="806" y="220" class="num" fill="#0d2460">0</text>
-<rect x="792" y="233" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="806" y="251" class="num" fill="#0d2460">0</text>
+<rect x="792" y="233" width="28" height="28" rx="3" fill="#0d2a7a"/>
+<rect x="794" y="235" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="806" y="251" class="num" fill="#c0d8ff">1</text>
 <rect x="792" y="264" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="806" y="282" class="num" fill="#0d2460">0</text>
 <rect x="823" y="78" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="837" y="96" class="num" fill="#0d2460">0</text>
-<rect x="823" y="109" width="28" height="28" rx="3" fill="#0a1640"/>
-<text x="837" y="127" class="num" fill="#0d2460">0</text>
+<rect x="823" y="109" width="28" height="28" rx="3" fill="#1a4acc"/>
+<rect x="825" y="111" width="24" height="4" rx="1" fill="white" fill-opacity="0.07"/>
+<text x="837" y="127" class="num" fill="#e0eeff">4</text>
 <rect x="823" y="140" width="28" height="28" rx="3" fill="#0a1640"/>
 <text x="837" y="158" class="num" fill="#0d2460">0</text>
 <rect x="823" y="171" width="28" height="28" rx="3" fill="#0a1640"/>
@@ -449,5 +461,5 @@
 <rect x="224" y="306" width="28" height="28" rx="3" fill="#ffab00"/>
 <text x="238" y="323" class="num" fill="#c0d8ff" style="font-size:8px">10+</text>
 <text x="261" y="316" class="lbl">COMMITS/DAY</text>
-<text x="872" y="316" class="sub" text-anchor="end">SYNCED 22 Nov 2026 23:41 UTC</text>
+<text x="872" y="316" class="sub" text-anchor="end">SYNCED 23 Nov 2026 04:47 UTC</text>
 </svg>
